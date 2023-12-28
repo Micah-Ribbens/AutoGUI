@@ -1,3 +1,8 @@
+Finished development: 04/05/2023
+
+Full documentation: https://micah-ribbens.github.io/Auto-GUI
+
+
 # Summary
 An application for the 2122 Robotics Team that allowed the user to make autonomous paths for the robot. I worked on the GUI (this application).
 Ibrahim (https://github.com/IbrahimAhmad65) wrote the path generating code and path following code. One important note is that there is error checking, 
