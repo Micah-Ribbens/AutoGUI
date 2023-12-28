@@ -1,6 +1,6 @@
 Finished development: 04/05/2023
 
-Full documentation: https://micah-ribbens.github.io/Auto-GUI
+Full documentation: https://micah-ribbens.github.io/Autonomous-Path-GUI
 
 
 # Summary
