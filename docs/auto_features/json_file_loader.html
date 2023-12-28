@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Auto-GUI.auto_features.json_file_loader API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Auto-GUI.auto_features.json_file_loader</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+
+from auto_components.path_modifying_point import PathModifyingPoint
+from auto_components.path_action_point import PathActionPoint
+from auto_components.required_points import RequiredPoint
+from miscellaneous.important_variables import *
+from auto_features.commands_retriever import commands_retriever
+from miscellaneous.utility_functions import *
+
+
+class JSONFileLoader:
+    &#34;&#34;&#34;Loads the JSON files the JSONFileWriter writes, so the Auto GUI application can save progress&#34;&#34;&#34;
+
+    path_modifying_points_json = None
+    required_points_json = None
+    path_action_points_json = None
+    point_click_function = None
+
+    def set_all_points_to_reflect_json_file(self, path_modifying_points, path_action_points, required_points, json_contents, point_click_function):
+        &#34;&#34;&#34;Updates all points on the screen (path_modifying_points, required_points, and path_action_points) to reflect what is in the JSON file&#34;&#34;&#34;
+
+        # How the GUI and Auto Follower name points is different, which is why these names are different
+        self.path_modifying_points_json = json_contents[&#34;ControlPoints&#34;]
+        self.required_points_json = json_contents[&#34;RequiredPoints&#34;]
+        self.path_action_points_json = json_contents[&#34;WayPoints&#34;]
+
+        self.point_click_function = point_click_function
+
+        self.set_path_modifying_points_to_reflect_json_file(path_modifying_points)
+        self.set_path_action_points_to_reflect_json_file(path_action_points)
+        self.set_required_points_to_reflect_json_file(required_points)
+
+    def set_path_modifying_points_to_reflect_json_file(self, path_modifying_points):
+        &#34;&#34;&#34;Updates the control points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+        for x in range(len(self.path_modifying_points_json)):
+            # Adding the control point to control points
+            current_path_modifying_point = PathModifyingPoint(self.point_click_function, x)
+            path_modifying_points.append(current_path_modifying_point)
+
+            # Updating the control point&#39;s attributes, so it reflects the JSON file
+            current_path_modifying_point_json = self.path_modifying_points_json[x]
+            self.set_point_position(current_path_modifying_point, current_path_modifying_point_json)
+            current_path_modifying_point.set_vertical_velocity(float(current_path_modifying_point_json[&#34;Vy&#34;]))
+            current_path_modifying_point.set_horizontal_velocity(float(current_path_modifying_point_json[&#34;Vx&#34;]))
+            current_path_modifying_point.set_spline_order(current_path_modifying_point_json[&#34;order&#34;])
+
+    def set_point_position(self, point, point_json):
+        &#34;&#34;&#34;Sets the point&#39;s position to reflect the JSON for the point&#34;&#34;&#34;
+
+        point.set_field_left_edge(float(point_json[&#34;X&#34;]))
+        point.set_field_top_edge(float(point_json[&#34;Y&#34;]))
+
+    def set_path_action_points_to_reflect_json_file(self, path_action_points):
+        &#34;&#34;&#34;Updates the control points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+        current_path_action_point_number = 0
+        path_action_point_number = 0
+
+        while path_action_point_number &lt; len(self.path_action_points_json):
+            current_path_action_point_json = self.path_action_points_json[current_path_action_point_number]
+
+            if current_path_action_point_json[&#34;isNeeded&#34;]:
+                path_action_point = PathActionPoint(self.point_click_function, path_action_point_number)
+                path_action_points.append(path_action_point)
+                self.set_point_position(path_action_point, current_path_action_point_json)
+
+                path_action_point_command_name = current_path_action_point_json[&#34;Command&#34;]
+                self.set_path_action_point_command_to_reflect_json_file(path_action_point, current_path_action_point_json, current_path_action_point_number)
+                number_of_additional_command_components = self.get_number_of_additional_path_action_point_command_components(path_action_point_command_name)
+
+                path_action_point.set_t_value(current_path_action_point_json[&#34;t&#34;])
+                current_path_action_point_number += 1 + number_of_additional_command_components
+
+            path_action_point_number += 1
+
+    def set_required_points_to_reflect_json_file(self, required_points):
+        &#34;&#34;&#34;Updates the requried_points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+        required_point_number = 1
+
+        for x in range(len(self.required_points_json)):
+            current_required_points_json = self.required_points_json[x]
+
+            # Determines if this point is specific to the GUI or the Auto Follower. If it belongs to the Auto Follower, then
+            # That point should not be added
+            if current_required_points_json[&#34;isNeeded&#34;]:
+                current_required_point = RequiredPoint(self.point_click_function, required_point_number + 1)
+                required_points.append(current_required_point)
+
+                current_required_point.set_t_value(current_required_points_json[&#34;t&#34;])
+                self.set_point_position(current_required_point, current_required_points_json)
+                radian_angle = current_required_points_json[&#34;angle&#34;]
+                current_required_point.set_angle(math.degrees(radian_angle))
+
+    def set_path_action_point_command_to_reflect_json_file(self, path_action_point, current_path_action_point_json, current_path_action_point_number):
+        &#34;&#34;&#34;Sets the command of the path modifying point to reflect what is in the json file (it will also combine the command components)&#34;&#34;&#34;
+
+        path_action_point_command_name = current_path_action_point_json[&#34;Command&#34;]
+        path_action_point.set_command(path_action_point_command_name)
+
+        current_command_parameters = current_path_action_point_json[&#34;args&#34;]
+        current_command_parameter_values = list(current_command_parameters.values())
+
+        number_of_additional_command_components = self.get_number_of_additional_path_action_point_command_components(path_action_point_command_name)
+
+        # Adding one to get to the next indexes past the original index
+        for j in range(current_path_action_point_number + 1, current_path_action_point_number + number_of_additional_command_components + 1):
+            path_action_point_component_data = self.path_action_points_json[j]
+            component_parameters = path_action_point_component_data[&#34;args&#34;]
+            component_command_parameter_values = list(component_parameters.values())
+            current_command_parameter_values += component_command_parameter_values
+
+        path_action_point.set_command_parameter_values(current_command_parameter_values)
+
+    def get_number_of_additional_path_action_point_command_components(self, path_action_point_command_name):
+        &#34;&#34;&#34;
+            Returns:
+                int: the number of components a command has&#34;&#34;&#34;
+
+        # If it is not a combined command it has no more additional components, but if it is a combined command it will
+        number_of_additional_command_components = 0
+        if commands_retriever.combined_commands.__contains__(path_action_point_command_name):
+            # One of a command&#39;s components is itself, so one must be subtracted
+            number_of_additional_command_components = len(commands_retriever.combined_commands.get(path_action_point_command_name)) - 1
+
+        return number_of_additional_command_components
+
+
+json_file_loader = JSONFileLoader()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader"><code class="flex name class">
+<span>class <span class="ident">JSONFileLoader</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads the JSON files the JSONFileWriter writes, so the Auto GUI application can save progress</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class JSONFileLoader:
+    &#34;&#34;&#34;Loads the JSON files the JSONFileWriter writes, so the Auto GUI application can save progress&#34;&#34;&#34;
+
+    path_modifying_points_json = None
+    required_points_json = None
+    path_action_points_json = None
+    point_click_function = None
+
+    def set_all_points_to_reflect_json_file(self, path_modifying_points, path_action_points, required_points, json_contents, point_click_function):
+        &#34;&#34;&#34;Updates all points on the screen (path_modifying_points, required_points, and path_action_points) to reflect what is in the JSON file&#34;&#34;&#34;
+
+        # How the GUI and Auto Follower name points is different, which is why these names are different
+        self.path_modifying_points_json = json_contents[&#34;ControlPoints&#34;]
+        self.required_points_json = json_contents[&#34;RequiredPoints&#34;]
+        self.path_action_points_json = json_contents[&#34;WayPoints&#34;]
+
+        self.point_click_function = point_click_function
+
+        self.set_path_modifying_points_to_reflect_json_file(path_modifying_points)
+        self.set_path_action_points_to_reflect_json_file(path_action_points)
+        self.set_required_points_to_reflect_json_file(required_points)
+
+    def set_path_modifying_points_to_reflect_json_file(self, path_modifying_points):
+        &#34;&#34;&#34;Updates the control points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+        for x in range(len(self.path_modifying_points_json)):
+            # Adding the control point to control points
+            current_path_modifying_point = PathModifyingPoint(self.point_click_function, x)
+            path_modifying_points.append(current_path_modifying_point)
+
+            # Updating the control point&#39;s attributes, so it reflects the JSON file
+            current_path_modifying_point_json = self.path_modifying_points_json[x]
+            self.set_point_position(current_path_modifying_point, current_path_modifying_point_json)
+            current_path_modifying_point.set_vertical_velocity(float(current_path_modifying_point_json[&#34;Vy&#34;]))
+            current_path_modifying_point.set_horizontal_velocity(float(current_path_modifying_point_json[&#34;Vx&#34;]))
+            current_path_modifying_point.set_spline_order(current_path_modifying_point_json[&#34;order&#34;])
+
+    def set_point_position(self, point, point_json):
+        &#34;&#34;&#34;Sets the point&#39;s position to reflect the JSON for the point&#34;&#34;&#34;
+
+        point.set_field_left_edge(float(point_json[&#34;X&#34;]))
+        point.set_field_top_edge(float(point_json[&#34;Y&#34;]))
+
+    def set_path_action_points_to_reflect_json_file(self, path_action_points):
+        &#34;&#34;&#34;Updates the control points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+        current_path_action_point_number = 0
+        path_action_point_number = 0
+
+        while path_action_point_number &lt; len(self.path_action_points_json):
+            current_path_action_point_json = self.path_action_points_json[current_path_action_point_number]
+
+            if current_path_action_point_json[&#34;isNeeded&#34;]:
+                path_action_point = PathActionPoint(self.point_click_function, path_action_point_number)
+                path_action_points.append(path_action_point)
+                self.set_point_position(path_action_point, current_path_action_point_json)
+
+                path_action_point_command_name = current_path_action_point_json[&#34;Command&#34;]
+                self.set_path_action_point_command_to_reflect_json_file(path_action_point, current_path_action_point_json, current_path_action_point_number)
+                number_of_additional_command_components = self.get_number_of_additional_path_action_point_command_components(path_action_point_command_name)
+
+                path_action_point.set_t_value(current_path_action_point_json[&#34;t&#34;])
+                current_path_action_point_number += 1 + number_of_additional_command_components
+
+            path_action_point_number += 1
+
+    def set_required_points_to_reflect_json_file(self, required_points):
+        &#34;&#34;&#34;Updates the requried_points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+        required_point_number = 1
+
+        for x in range(len(self.required_points_json)):
+            current_required_points_json = self.required_points_json[x]
+
+            # Determines if this point is specific to the GUI or the Auto Follower. If it belongs to the Auto Follower, then
+            # That point should not be added
+            if current_required_points_json[&#34;isNeeded&#34;]:
+                current_required_point = RequiredPoint(self.point_click_function, required_point_number + 1)
+                required_points.append(current_required_point)
+
+                current_required_point.set_t_value(current_required_points_json[&#34;t&#34;])
+                self.set_point_position(current_required_point, current_required_points_json)
+                radian_angle = current_required_points_json[&#34;angle&#34;]
+                current_required_point.set_angle(math.degrees(radian_angle))
+
+    def set_path_action_point_command_to_reflect_json_file(self, path_action_point, current_path_action_point_json, current_path_action_point_number):
+        &#34;&#34;&#34;Sets the command of the path modifying point to reflect what is in the json file (it will also combine the command components)&#34;&#34;&#34;
+
+        path_action_point_command_name = current_path_action_point_json[&#34;Command&#34;]
+        path_action_point.set_command(path_action_point_command_name)
+
+        current_command_parameters = current_path_action_point_json[&#34;args&#34;]
+        current_command_parameter_values = list(current_command_parameters.values())
+
+        number_of_additional_command_components = self.get_number_of_additional_path_action_point_command_components(path_action_point_command_name)
+
+        # Adding one to get to the next indexes past the original index
+        for j in range(current_path_action_point_number + 1, current_path_action_point_number + number_of_additional_command_components + 1):
+            path_action_point_component_data = self.path_action_points_json[j]
+            component_parameters = path_action_point_component_data[&#34;args&#34;]
+            component_command_parameter_values = list(component_parameters.values())
+            current_command_parameter_values += component_command_parameter_values
+
+        path_action_point.set_command_parameter_values(current_command_parameter_values)
+
+    def get_number_of_additional_path_action_point_command_components(self, path_action_point_command_name):
+        &#34;&#34;&#34;
+            Returns:
+                int: the number of components a command has&#34;&#34;&#34;
+
+        # If it is not a combined command it has no more additional components, but if it is a combined command it will
+        number_of_additional_command_components = 0
+        if commands_retriever.combined_commands.__contains__(path_action_point_command_name):
+            # One of a command&#39;s components is itself, so one must be subtracted
+            number_of_additional_command_components = len(commands_retriever.combined_commands.get(path_action_point_command_name)) - 1
+
+        return number_of_additional_command_components</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.path_action_points_json"><code class="name">var <span class="ident">path_action_points_json</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.path_modifying_points_json"><code class="name">var <span class="ident">path_modifying_points_json</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.point_click_function"><code class="name">var <span class="ident">point_click_function</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.required_points_json"><code class="name">var <span class="ident">required_points_json</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.get_number_of_additional_path_action_point_command_components"><code class="name flex">
+<span>def <span class="ident">get_number_of_additional_path_action_point_command_components</span></span>(<span>self, path_action_point_command_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>the number of components a command has</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_number_of_additional_path_action_point_command_components(self, path_action_point_command_name):
+    &#34;&#34;&#34;
+        Returns:
+            int: the number of components a command has&#34;&#34;&#34;
+
+    # If it is not a combined command it has no more additional components, but if it is a combined command it will
+    number_of_additional_command_components = 0
+    if commands_retriever.combined_commands.__contains__(path_action_point_command_name):
+        # One of a command&#39;s components is itself, so one must be subtracted
+        number_of_additional_command_components = len(commands_retriever.combined_commands.get(path_action_point_command_name)) - 1
+
+    return number_of_additional_command_components</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_all_points_to_reflect_json_file"><code class="name flex">
+<span>def <span class="ident">set_all_points_to_reflect_json_file</span></span>(<span>self, path_modifying_points, path_action_points, required_points, json_contents, point_click_function)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates all points on the screen (path_modifying_points, required_points, and path_action_points) to reflect what is in the JSON file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_all_points_to_reflect_json_file(self, path_modifying_points, path_action_points, required_points, json_contents, point_click_function):
+    &#34;&#34;&#34;Updates all points on the screen (path_modifying_points, required_points, and path_action_points) to reflect what is in the JSON file&#34;&#34;&#34;
+
+    # How the GUI and Auto Follower name points is different, which is why these names are different
+    self.path_modifying_points_json = json_contents[&#34;ControlPoints&#34;]
+    self.required_points_json = json_contents[&#34;RequiredPoints&#34;]
+    self.path_action_points_json = json_contents[&#34;WayPoints&#34;]
+
+    self.point_click_function = point_click_function
+
+    self.set_path_modifying_points_to_reflect_json_file(path_modifying_points)
+    self.set_path_action_points_to_reflect_json_file(path_action_points)
+    self.set_required_points_to_reflect_json_file(required_points)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_action_point_command_to_reflect_json_file"><code class="name flex">
+<span>def <span class="ident">set_path_action_point_command_to_reflect_json_file</span></span>(<span>self, path_action_point, current_path_action_point_json, current_path_action_point_number)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the command of the path modifying point to reflect what is in the json file (it will also combine the command components)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_path_action_point_command_to_reflect_json_file(self, path_action_point, current_path_action_point_json, current_path_action_point_number):
+    &#34;&#34;&#34;Sets the command of the path modifying point to reflect what is in the json file (it will also combine the command components)&#34;&#34;&#34;
+
+    path_action_point_command_name = current_path_action_point_json[&#34;Command&#34;]
+    path_action_point.set_command(path_action_point_command_name)
+
+    current_command_parameters = current_path_action_point_json[&#34;args&#34;]
+    current_command_parameter_values = list(current_command_parameters.values())
+
+    number_of_additional_command_components = self.get_number_of_additional_path_action_point_command_components(path_action_point_command_name)
+
+    # Adding one to get to the next indexes past the original index
+    for j in range(current_path_action_point_number + 1, current_path_action_point_number + number_of_additional_command_components + 1):
+        path_action_point_component_data = self.path_action_points_json[j]
+        component_parameters = path_action_point_component_data[&#34;args&#34;]
+        component_command_parameter_values = list(component_parameters.values())
+        current_command_parameter_values += component_command_parameter_values
+
+    path_action_point.set_command_parameter_values(current_command_parameter_values)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_action_points_to_reflect_json_file"><code class="name flex">
+<span>def <span class="ident">set_path_action_points_to_reflect_json_file</span></span>(<span>self, path_action_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the control points list to reflect what is in the JSON file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_path_action_points_to_reflect_json_file(self, path_action_points):
+    &#34;&#34;&#34;Updates the control points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+    current_path_action_point_number = 0
+    path_action_point_number = 0
+
+    while path_action_point_number &lt; len(self.path_action_points_json):
+        current_path_action_point_json = self.path_action_points_json[current_path_action_point_number]
+
+        if current_path_action_point_json[&#34;isNeeded&#34;]:
+            path_action_point = PathActionPoint(self.point_click_function, path_action_point_number)
+            path_action_points.append(path_action_point)
+            self.set_point_position(path_action_point, current_path_action_point_json)
+
+            path_action_point_command_name = current_path_action_point_json[&#34;Command&#34;]
+            self.set_path_action_point_command_to_reflect_json_file(path_action_point, current_path_action_point_json, current_path_action_point_number)
+            number_of_additional_command_components = self.get_number_of_additional_path_action_point_command_components(path_action_point_command_name)
+
+            path_action_point.set_t_value(current_path_action_point_json[&#34;t&#34;])
+            current_path_action_point_number += 1 + number_of_additional_command_components
+
+        path_action_point_number += 1</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_modifying_points_to_reflect_json_file"><code class="name flex">
+<span>def <span class="ident">set_path_modifying_points_to_reflect_json_file</span></span>(<span>self, path_modifying_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the control points list to reflect what is in the JSON file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_path_modifying_points_to_reflect_json_file(self, path_modifying_points):
+    &#34;&#34;&#34;Updates the control points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+    for x in range(len(self.path_modifying_points_json)):
+        # Adding the control point to control points
+        current_path_modifying_point = PathModifyingPoint(self.point_click_function, x)
+        path_modifying_points.append(current_path_modifying_point)
+
+        # Updating the control point&#39;s attributes, so it reflects the JSON file
+        current_path_modifying_point_json = self.path_modifying_points_json[x]
+        self.set_point_position(current_path_modifying_point, current_path_modifying_point_json)
+        current_path_modifying_point.set_vertical_velocity(float(current_path_modifying_point_json[&#34;Vy&#34;]))
+        current_path_modifying_point.set_horizontal_velocity(float(current_path_modifying_point_json[&#34;Vx&#34;]))
+        current_path_modifying_point.set_spline_order(current_path_modifying_point_json[&#34;order&#34;])</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_point_position"><code class="name flex">
+<span>def <span class="ident">set_point_position</span></span>(<span>self, point, point_json)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the point's position to reflect the JSON for the point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_point_position(self, point, point_json):
+    &#34;&#34;&#34;Sets the point&#39;s position to reflect the JSON for the point&#34;&#34;&#34;
+
+    point.set_field_left_edge(float(point_json[&#34;X&#34;]))
+    point.set_field_top_edge(float(point_json[&#34;Y&#34;]))</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_required_points_to_reflect_json_file"><code class="name flex">
+<span>def <span class="ident">set_required_points_to_reflect_json_file</span></span>(<span>self, required_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the requried_points list to reflect what is in the JSON file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_required_points_to_reflect_json_file(self, required_points):
+    &#34;&#34;&#34;Updates the requried_points list to reflect what is in the JSON file&#34;&#34;&#34;
+
+    required_point_number = 1
+
+    for x in range(len(self.required_points_json)):
+        current_required_points_json = self.required_points_json[x]
+
+        # Determines if this point is specific to the GUI or the Auto Follower. If it belongs to the Auto Follower, then
+        # That point should not be added
+        if current_required_points_json[&#34;isNeeded&#34;]:
+            current_required_point = RequiredPoint(self.point_click_function, required_point_number + 1)
+            required_points.append(current_required_point)
+
+            current_required_point.set_t_value(current_required_points_json[&#34;t&#34;])
+            self.set_point_position(current_required_point, current_required_points_json)
+            radian_angle = current_required_points_json[&#34;angle&#34;]
+            current_required_point.set_angle(math.degrees(radian_angle))</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Auto-GUI.auto_features" href="index.html">Auto-GUI.auto_features</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader">JSONFileLoader</a></code></h4>
+<ul class="">
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.get_number_of_additional_path_action_point_command_components" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.get_number_of_additional_path_action_point_command_components">get_number_of_additional_path_action_point_command_components</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.path_action_points_json" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.path_action_points_json">path_action_points_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.path_modifying_points_json" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.path_modifying_points_json">path_modifying_points_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.point_click_function" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.point_click_function">point_click_function</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.required_points_json" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.required_points_json">required_points_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_all_points_to_reflect_json_file" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_all_points_to_reflect_json_file">set_all_points_to_reflect_json_file</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_action_point_command_to_reflect_json_file" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_action_point_command_to_reflect_json_file">set_path_action_point_command_to_reflect_json_file</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_action_points_to_reflect_json_file" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_action_points_to_reflect_json_file">set_path_action_points_to_reflect_json_file</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_modifying_points_to_reflect_json_file" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_path_modifying_points_to_reflect_json_file">set_path_modifying_points_to_reflect_json_file</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_point_position" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_point_position">set_point_position</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_required_points_to_reflect_json_file" href="#Auto-GUI.auto_features.json_file_loader.JSONFileLoader.set_required_points_to_reflect_json_file">set_required_points_to_reflect_json_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

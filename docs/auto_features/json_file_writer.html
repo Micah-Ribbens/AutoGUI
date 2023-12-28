@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Auto-GUI.auto_features.json_file_writer API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Auto-GUI.auto_features.json_file_writer</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+import uuid
+from tkinter import messagebox
+
+from auto_components.path_action_point import PathActionPoint
+from miscellaneous.important_variables import *
+from auto_features.path_creation import *
+from auto_features.commands_retriever import commands_retriever
+from miscellaneous.utility_functions import truncate
+
+class JSONFileWriter:
+    &#34;&#34;&#34;The class that writes all the files&#34;&#34;&#34;
+
+    path_action_point_json_items = []
+    path_action_point_left_edge = 0
+    path_action_point_top_edge = 0
+    last_angle = 0
+    path_modifying_point_to_current_angle = {}
+    path_modifying_point_path_indexes_length = []
+    path_modifying_point_to_angle = {}
+    required_point_index_to_angle = {}
+    path_modifying_point_path_indexes = None
+
+    def write_file(self, file, all_path_modifying_points, all_path_action_points,
+                   start_all_json_contents, first_required_point, last_required_point, placement_angle):
+        &#34;&#34;&#34;&#34;Writes the JSON file that the Auto Path code uses&#34;&#34;&#34;
+
+        self.last_angle = math.radians(placement_angle)  # So it is converted to radians
+        self.path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+        all_json_contents = start_all_json_contents
+
+        required_points = points.required_points
+        required_points = [first_required_point] + required_points + [last_required_point]
+
+        update_path_modifying_point_information(all_path_action_points, all_path_modifying_points, required_points)
+
+        # All the lists need an empty line after them and the last list does not need a comma
+        # ALso have to call the make_*_accurate because the input fields don&#39;t always reflect what the GUI shows
+        self.update_path_modifying_point_json(all_json_contents, all_path_modifying_points)
+
+        self.update_required_points_json(all_json_contents, required_points)
+
+        self.update_path_action_points_json(all_json_contents, all_path_action_points)
+
+        json.dump(all_json_contents, file, indent=JSON_MAX_INDENT)
+
+    def update_path_modifying_point_json(self, all_json_contents, path_modifying_points):
+        &#34;&#34;&#34; Updates &#39;all_json_contents&#39; so it contains the &#39;path_modifying_points&#39; in it, so the file that is eventually written
+            can contain all the information necessary for the Auto Path Follower&#34;&#34;&#34;
+
+        # The contents of the control points list
+        path_modifying_point_json_items = []
+
+        # So all_json_contents can now contain all the control points (and modifications to &#39;path_modifying_point_json_items&#39; will be tracked
+        # How the GUI and Auto Follower name points is different, which is why these names are different
+        all_json_contents[&#34;ControlPoints&#34;] = path_modifying_point_json_items
+
+        for path_modifying_point in path_modifying_points:
+            left_edge = path_modifying_point.get_field_left_edge()
+            top_edge = path_modifying_point.get_field_top_edge()
+
+            spline_order = path_modifying_point.get_spline_order()
+
+            new_path_modifying_point_list_item = {
+                &#34;X&#34;: left_edge,
+                &#34;Y&#34;: top_edge,
+                &#34;Vx&#34;: path_modifying_point.get_horizontal_velocity(),
+                &#34;Vy&#34;: path_modifying_point.get_vertical_velocity(),
+                &#34;order&#34;: spline_order
+            }
+
+            path_modifying_point_json_items.append(new_path_modifying_point_list_item)
+
+    def update_required_points_json(self, all_json_contents, required_points):
+        &#34;&#34;&#34; Updates &#39;all_json_contents&#39; so it contains the &#39;required_points&#39; in it, so the file that is eventually written
+            can contain all the information necessary for the Auto Path Follower&#34;&#34;&#34;
+
+        # The contents of the control points list
+        required_points_json = []
+
+        # So all_json_contents can now contain all the required points (and modifications to &#39;required_points_json&#39; will be tracked
+        all_json_contents[&#34;RequiredPoints&#34;] = required_points_json
+
+        for required_point in required_points:
+
+            left_edge = required_point.get_field_left_edge()
+            top_edge = required_point.get_field_top_edge()
+
+            new_required_point_json = {
+                &#34;X&#34;: left_edge,
+                &#34;Y&#34;: top_edge,
+                &#34;angle-GUI&#34;: required_point.get_angle(),
+                &#34;angle&#34;: math.radians(required_point.get_angle()),
+                &#34;t&#34;: required_point.get_t_value()
+            }
+
+            new_required_point_json_args = {}
+            new_required_point_json[&#34;args&#34;] = new_required_point_json_args
+
+            new_required_point_json[&#34;isNeeded&#34;] = required_point.is_needed
+
+            required_points_json.append(new_required_point_json)
+
+    def update_path_action_points_json(self, all_json_contents, all_path_action_points):
+        &#34;&#34;&#34;
+            Returns:
+                str: the path_action_points JSON&#34;&#34;&#34;
+
+        path_action_points = points.path_action_points
+
+        self.path_action_point_json_items = []
+
+        # How the GUI and Auto Follower define points is different, which is why the names are different here
+        all_json_contents[&#34;WayPoints&#34;] = self.path_action_point_json_items
+
+        for path_action_point in path_action_points:
+            self.update_path_action_point_command_components_json(path_action_point)
+
+    def update_path_action_point_command_components_json(self, path_action_point: PathActionPoint):
+        &#34;&#34;&#34;Updates the command components; some commands are a conglomerate of 2+ commands, so this provides that architecture&#34;&#34;&#34;
+
+        base_command_name = path_action_point.get_command_name()
+        command_component_names = []
+
+        # If there are no components for that command, then the components should be 0
+        if commands_retriever.combined_commands.get(base_command_name) is not None:
+            # The first one should be ignored because that is the base command, which is already accounted for
+            command_component_names = commands_retriever.combined_commands.get(base_command_name)[1:]
+
+        self.path_action_point_left_edge, self.path_action_point_top_edge = path_action_point.get_field_left_edge(), path_action_point.get_field_top_edge()
+
+        base_command_unique_identifier = str(uuid.uuid4())[:4]  # Only first 4 digits are needed for a unique value
+        self.update_path_action_point_command_json(path_action_point, base_command_name, base_command_unique_identifier, True, 0, path_action_point.is_needed)
+
+        # Have to set these, so the next point will be the closest to the point of the base command
+        index = get_t_value_path_index(path_action_point, points.path_modifying_point_path_indexes)
+        self.path_action_point_left_edge, self.path_action_point_top_edge = points.path_points[index]
+
+        for x in range(len(command_component_names)):
+            self.path_action_point_left_edge, self.path_action_point_top_edge = self.get_next_path_action_point_coordinates([self.path_action_point_left_edge, self.path_action_point_top_edge])
+            t_value = self.get_path_index_t_value([self.path_action_point_left_edge, self.path_action_point_top_edge])
+            path_action_point.set_t_value(t_value)
+
+            self.update_path_action_point_command_json(path_action_point, command_component_names[x],
+                                                         base_command_unique_identifier, False, x + 1, path_action_point.is_needed)
+
+
+    def get_surrounding_path_modifying_point_indexes(self, path_index):
+        &#34;&#34;&#34; 
+            Returns:
+                list[int]: {previous_path_modifying_point_index, next_path_modifying_point_index}; the indexes of the
+                path modifying points that are before and after the &#39;path_index&#39;&#34;&#34;&#34;
+
+        previous_path_modifying_point_path_index = self.path_modifying_point_path_indexes[0]
+        next_path_modifying_point_path_index = self.path_modifying_point_path_indexes[1]
+
+        for path_modifying_point_path_index in self.path_modifying_point_path_indexes:
+            if (path_modifying_point_path_index &gt; previous_path_modifying_point_path_index and
+                    path_modifying_point_path_index &lt;= path_index):
+
+                previous_path_modifying_point_path_index = path_modifying_point_path_index
+
+            if (path_modifying_point_path_index &lt; next_path_modifying_point_path_index and
+                    path_modifying_point_path_index &gt;= path_index):
+
+                next_path_modifying_point_path_index = path_modifying_point_path_index
+
+    def update_path_action_point_command_json(self, path_action_point, base_command_name, base_command_unique_identifier, is_base_command, command_component_number, is_needed):
+        &#34;&#34;&#34; Updates the json for the base path modifying point command or command component- The data for all of these will be in
+            commands.json&#34;&#34;&#34;
+
+        new_path_action_point_json_item = {}
+        current_command_parameter_names = commands_retriever.get_command_parameter_base_names(base_command_name)
+
+        self.add_path_action_point_tracking_values(new_path_action_point_json_item, is_base_command, base_command_unique_identifier, command_component_number)
+
+        self.add_keys_and_values_to_dictionary([&#34;X&#34;, &#34;Y&#34;, &#34;Speed&#34;, &#34;Command&#34;, &#34;t&#34;],
+                                               [self.path_action_point_left_edge, self.path_action_point_top_edge, path_action_point.get_speed(),
+                                                base_command_name, path_action_point.get_t_value()],
+                                               new_path_action_point_json_item)
+
+        current_command_parameter_values = self.get_command_parameters_values(current_command_parameter_names,
+                                                                              path_action_point)
+        new_path_action_point_json_item_args = {}
+        new_path_action_point_json_item[&#34;args&#34;] = new_path_action_point_json_item_args
+        self.add_keys_and_values_to_dictionary(current_command_parameter_names, current_command_parameter_values,
+                                               new_path_action_point_json_item_args)
+
+        self.path_action_point_json_items.append(new_path_action_point_json_item)
+        new_path_action_point_json_item[&#34;isNeeded&#34;] = is_needed
+
+
+    def add_path_action_point_tracking_values(self, new_path_action_point_json_item, is_base_command, base_command_unique_identifier, subcomponent_number):
+        &#34;&#34;&#34; Adds the values that are used for tracking where components of a command belong to in &#39;new_path_action_point_json_item&#39;
+            the tracking values are &#39;name&#39; and &#39;belongsTo&#39;&#34;&#34;&#34;
+        
+        if is_base_command:
+            new_path_action_point_json_item[&#34;name&#34;] = base_command_unique_identifier
+            new_path_action_point_json_item[&#34;belongsTo&#34;] = &#34;self&#34;
+        
+        else:
+            new_path_action_point_json_item[&#34;name&#34;] = f&#34;{base_command_unique_identifier} [{subcomponent_number}]&#34;
+            new_path_action_point_json_item[&#34;belongsTo&#34;] = base_command_unique_identifier
+
+    def get_command_parameters_values(self, current_parameter_names, path_action_point):
+        &#34;&#34;&#34;
+            Returns:
+                list[str]: the values of the command parameters for the &#39;path_action_point&#39;&#34;&#34;&#34;
+
+        command_parameters_values = []
+
+        for current_parameter_name in current_parameter_names:
+            parameter_value = path_action_point.get_command_parameter_value(current_parameter_name)
+            command_parameters_values.append(parameter_value)
+
+        return command_parameters_values
+
+    def get_next_path_action_point_coordinates(self, previous_coordinates):
+        &#34;&#34;&#34;
+            Returns:
+                list[float]: [left_edge, top_edge]; the coordinates of the next path modifying point. This is important because if one GUI path modifying point command
+                is the combination of 2+ Auto path modifying point commands then those 2+ points need to be spaced apart otherwise the Auto code
+                raises an error&#34;&#34;&#34;
+
+        return_value = []
+        previous_coordinates_index = points.path_points.index(previous_coordinates)
+        distance = 0
+
+        for x in range(previous_coordinates_index, len(points.path_points)):
+            new_coordinates = points.path_points[x]
+            distance += math.dist(previous_coordinates, new_coordinates)
+
+            if distance &gt;= MINIMUM_DISTANCE_BETWEEN_PATH_MODIYFING_POINTS:
+                return_value = new_coordinates
+                break
+
+        # If it could not find coordinates that are not far enough from the previous path modifying point then a path modifying point can&#39;t be there
+        # Because the Auto code will raise an Error if path modifying points are too close to each other
+        if len(return_value) == 0:
+            raise ValueError(&#34;It is not possible to have a path modifying point there because it will be too close&#34; +
+                             &#34;to other path modifying points&#34;)
+
+        return return_value
+
+    def add_keys_and_values_to_dictionary(self, keys, values, dictionary):
+        &#34;&#34;&#34;Adds the key value pairs to the dictionary&#34;&#34;&#34;
+
+        for x in range(len(keys)):
+            dictionary_key = keys[x]
+            dictionary_value = values[x]
+
+            dictionary[dictionary_key] = dictionary_value
+
+    def update_angle_key_and_value_pairs(self, keys, values):
+        &#34;&#34;&#34;Updates all the key value pairs that are angles: the key has &#39;angle&#39; in its name&#34;&#34;&#34;
+
+        for x in range(len(keys)):
+            dictionary_key = keys[x]
+            dictionary_value = values[x]
+
+            if dictionary_key.__contains__(&#34;angle&#34;) or dictionary_key.__contains__(&#34;Angle&#34;):
+                current_radian_angle = float(dictionary_value) * math.pi / 180
+                delta_angle = current_radian_angle - self.last_angle
+
+                values[x] = delta_angle
+                keys.append(f&#34;{dictionary_key}-GUI&#34;)
+                values.append(dictionary_value)
+
+                # So the GUI angle (field centric) can be stored also.
+                self.last_angle = current_radian_angle
+
+    def write_positions_to_file(self):
+        &#34;&#34;&#34;Writes the control points [x, y] to a file, so the JAR file can give all the points for the path&#34;&#34;&#34;
+
+        all_json_contents = {}
+
+        self.update_path_modifying_point_json(all_json_contents, points.path_modifying_points)
+        json.dump(all_json_contents, open(&#34;swerve_input.txt&#34;, &#34;w+&#34;), indent=JSON_MAX_INDENT)
+
+        os.system(&#34;java -jar AutoFollower.jar swerve_input.txt swerve_output.txt&#34;)
+        swerve_output_reading = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+        file_current_contents = get_string(swerve_output_reading.read()[:-1])  # The last enter must be deleted
+
+        file_current_contents_list = file_current_contents.split(&#34;\n&#34;)
+        last_path_point = file_current_contents_list[-1]
+        # remaining_file_current_contents = get_string(file_current_contents_list[:-1])
+
+        remaining_file_current_contents = &#34;&#34;
+        for item in file_current_contents_list[:-1]:
+            remaining_file_current_contents += f&#34;{item}\n&#34;
+
+        if len(file_current_contents.split(&#34;\n&#34;)) &lt;= 2:
+            messagebox.showerror(&#34;ERROR&#34;, &#34;Java does not seem to be installed on your system !!!&#34;)
+            raise ValueError(&#34;Java does not seem to be installed on your system !!!&#34;)
+
+        swerve_output = open(&#34;swerve_output.txt&#34;, &#34;w+&#34;)
+
+        # The file does not have the last Path Action Point number
+        swerve_output.write(f&#34;{remaining_file_current_contents}Control Point: {len(points.path_modifying_points) - 1}\n{last_path_point}&#34;)
+        swerve_output.close()
+
+        update_meter_path_points()
+
+
+json_file_writer = JSONFileWriter()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter"><code class="flex name class">
+<span>class <span class="ident">JSONFileWriter</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>The class that writes all the files</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class JSONFileWriter:
+    &#34;&#34;&#34;The class that writes all the files&#34;&#34;&#34;
+
+    path_action_point_json_items = []
+    path_action_point_left_edge = 0
+    path_action_point_top_edge = 0
+    last_angle = 0
+    path_modifying_point_to_current_angle = {}
+    path_modifying_point_path_indexes_length = []
+    path_modifying_point_to_angle = {}
+    required_point_index_to_angle = {}
+    path_modifying_point_path_indexes = None
+
+    def write_file(self, file, all_path_modifying_points, all_path_action_points,
+                   start_all_json_contents, first_required_point, last_required_point, placement_angle):
+        &#34;&#34;&#34;&#34;Writes the JSON file that the Auto Path code uses&#34;&#34;&#34;
+
+        self.last_angle = math.radians(placement_angle)  # So it is converted to radians
+        self.path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+        all_json_contents = start_all_json_contents
+
+        required_points = points.required_points
+        required_points = [first_required_point] + required_points + [last_required_point]
+
+        update_path_modifying_point_information(all_path_action_points, all_path_modifying_points, required_points)
+
+        # All the lists need an empty line after them and the last list does not need a comma
+        # ALso have to call the make_*_accurate because the input fields don&#39;t always reflect what the GUI shows
+        self.update_path_modifying_point_json(all_json_contents, all_path_modifying_points)
+
+        self.update_required_points_json(all_json_contents, required_points)
+
+        self.update_path_action_points_json(all_json_contents, all_path_action_points)
+
+        json.dump(all_json_contents, file, indent=JSON_MAX_INDENT)
+
+    def update_path_modifying_point_json(self, all_json_contents, path_modifying_points):
+        &#34;&#34;&#34; Updates &#39;all_json_contents&#39; so it contains the &#39;path_modifying_points&#39; in it, so the file that is eventually written
+            can contain all the information necessary for the Auto Path Follower&#34;&#34;&#34;
+
+        # The contents of the control points list
+        path_modifying_point_json_items = []
+
+        # So all_json_contents can now contain all the control points (and modifications to &#39;path_modifying_point_json_items&#39; will be tracked
+        # How the GUI and Auto Follower name points is different, which is why these names are different
+        all_json_contents[&#34;ControlPoints&#34;] = path_modifying_point_json_items
+
+        for path_modifying_point in path_modifying_points:
+            left_edge = path_modifying_point.get_field_left_edge()
+            top_edge = path_modifying_point.get_field_top_edge()
+
+            spline_order = path_modifying_point.get_spline_order()
+
+            new_path_modifying_point_list_item = {
+                &#34;X&#34;: left_edge,
+                &#34;Y&#34;: top_edge,
+                &#34;Vx&#34;: path_modifying_point.get_horizontal_velocity(),
+                &#34;Vy&#34;: path_modifying_point.get_vertical_velocity(),
+                &#34;order&#34;: spline_order
+            }
+
+            path_modifying_point_json_items.append(new_path_modifying_point_list_item)
+
+    def update_required_points_json(self, all_json_contents, required_points):
+        &#34;&#34;&#34; Updates &#39;all_json_contents&#39; so it contains the &#39;required_points&#39; in it, so the file that is eventually written
+            can contain all the information necessary for the Auto Path Follower&#34;&#34;&#34;
+
+        # The contents of the control points list
+        required_points_json = []
+
+        # So all_json_contents can now contain all the required points (and modifications to &#39;required_points_json&#39; will be tracked
+        all_json_contents[&#34;RequiredPoints&#34;] = required_points_json
+
+        for required_point in required_points:
+
+            left_edge = required_point.get_field_left_edge()
+            top_edge = required_point.get_field_top_edge()
+
+            new_required_point_json = {
+                &#34;X&#34;: left_edge,
+                &#34;Y&#34;: top_edge,
+                &#34;angle-GUI&#34;: required_point.get_angle(),
+                &#34;angle&#34;: math.radians(required_point.get_angle()),
+                &#34;t&#34;: required_point.get_t_value()
+            }
+
+            new_required_point_json_args = {}
+            new_required_point_json[&#34;args&#34;] = new_required_point_json_args
+
+            new_required_point_json[&#34;isNeeded&#34;] = required_point.is_needed
+
+            required_points_json.append(new_required_point_json)
+
+    def update_path_action_points_json(self, all_json_contents, all_path_action_points):
+        &#34;&#34;&#34;
+            Returns:
+                str: the path_action_points JSON&#34;&#34;&#34;
+
+        path_action_points = points.path_action_points
+
+        self.path_action_point_json_items = []
+
+        # How the GUI and Auto Follower define points is different, which is why the names are different here
+        all_json_contents[&#34;WayPoints&#34;] = self.path_action_point_json_items
+
+        for path_action_point in path_action_points:
+            self.update_path_action_point_command_components_json(path_action_point)
+
+    def update_path_action_point_command_components_json(self, path_action_point: PathActionPoint):
+        &#34;&#34;&#34;Updates the command components; some commands are a conglomerate of 2+ commands, so this provides that architecture&#34;&#34;&#34;
+
+        base_command_name = path_action_point.get_command_name()
+        command_component_names = []
+
+        # If there are no components for that command, then the components should be 0
+        if commands_retriever.combined_commands.get(base_command_name) is not None:
+            # The first one should be ignored because that is the base command, which is already accounted for
+            command_component_names = commands_retriever.combined_commands.get(base_command_name)[1:]
+
+        self.path_action_point_left_edge, self.path_action_point_top_edge = path_action_point.get_field_left_edge(), path_action_point.get_field_top_edge()
+
+        base_command_unique_identifier = str(uuid.uuid4())[:4]  # Only first 4 digits are needed for a unique value
+        self.update_path_action_point_command_json(path_action_point, base_command_name, base_command_unique_identifier, True, 0, path_action_point.is_needed)
+
+        # Have to set these, so the next point will be the closest to the point of the base command
+        index = get_t_value_path_index(path_action_point, points.path_modifying_point_path_indexes)
+        self.path_action_point_left_edge, self.path_action_point_top_edge = points.path_points[index]
+
+        for x in range(len(command_component_names)):
+            self.path_action_point_left_edge, self.path_action_point_top_edge = self.get_next_path_action_point_coordinates([self.path_action_point_left_edge, self.path_action_point_top_edge])
+            t_value = self.get_path_index_t_value([self.path_action_point_left_edge, self.path_action_point_top_edge])
+            path_action_point.set_t_value(t_value)
+
+            self.update_path_action_point_command_json(path_action_point, command_component_names[x],
+                                                         base_command_unique_identifier, False, x + 1, path_action_point.is_needed)
+
+
+    def get_surrounding_path_modifying_point_indexes(self, path_index):
+        &#34;&#34;&#34; 
+            Returns:
+                list[int]: {previous_path_modifying_point_index, next_path_modifying_point_index}; the indexes of the
+                path modifying points that are before and after the &#39;path_index&#39;&#34;&#34;&#34;
+
+        previous_path_modifying_point_path_index = self.path_modifying_point_path_indexes[0]
+        next_path_modifying_point_path_index = self.path_modifying_point_path_indexes[1]
+
+        for path_modifying_point_path_index in self.path_modifying_point_path_indexes:
+            if (path_modifying_point_path_index &gt; previous_path_modifying_point_path_index and
+                    path_modifying_point_path_index &lt;= path_index):
+
+                previous_path_modifying_point_path_index = path_modifying_point_path_index
+
+            if (path_modifying_point_path_index &lt; next_path_modifying_point_path_index and
+                    path_modifying_point_path_index &gt;= path_index):
+
+                next_path_modifying_point_path_index = path_modifying_point_path_index
+
+    def update_path_action_point_command_json(self, path_action_point, base_command_name, base_command_unique_identifier, is_base_command, command_component_number, is_needed):
+        &#34;&#34;&#34; Updates the json for the base path modifying point command or command component- The data for all of these will be in
+            commands.json&#34;&#34;&#34;
+
+        new_path_action_point_json_item = {}
+        current_command_parameter_names = commands_retriever.get_command_parameter_base_names(base_command_name)
+
+        self.add_path_action_point_tracking_values(new_path_action_point_json_item, is_base_command, base_command_unique_identifier, command_component_number)
+
+        self.add_keys_and_values_to_dictionary([&#34;X&#34;, &#34;Y&#34;, &#34;Speed&#34;, &#34;Command&#34;, &#34;t&#34;],
+                                               [self.path_action_point_left_edge, self.path_action_point_top_edge, path_action_point.get_speed(),
+                                                base_command_name, path_action_point.get_t_value()],
+                                               new_path_action_point_json_item)
+
+        current_command_parameter_values = self.get_command_parameters_values(current_command_parameter_names,
+                                                                              path_action_point)
+        new_path_action_point_json_item_args = {}
+        new_path_action_point_json_item[&#34;args&#34;] = new_path_action_point_json_item_args
+        self.add_keys_and_values_to_dictionary(current_command_parameter_names, current_command_parameter_values,
+                                               new_path_action_point_json_item_args)
+
+        self.path_action_point_json_items.append(new_path_action_point_json_item)
+        new_path_action_point_json_item[&#34;isNeeded&#34;] = is_needed
+
+
+    def add_path_action_point_tracking_values(self, new_path_action_point_json_item, is_base_command, base_command_unique_identifier, subcomponent_number):
+        &#34;&#34;&#34; Adds the values that are used for tracking where components of a command belong to in &#39;new_path_action_point_json_item&#39;
+            the tracking values are &#39;name&#39; and &#39;belongsTo&#39;&#34;&#34;&#34;
+        
+        if is_base_command:
+            new_path_action_point_json_item[&#34;name&#34;] = base_command_unique_identifier
+            new_path_action_point_json_item[&#34;belongsTo&#34;] = &#34;self&#34;
+        
+        else:
+            new_path_action_point_json_item[&#34;name&#34;] = f&#34;{base_command_unique_identifier} [{subcomponent_number}]&#34;
+            new_path_action_point_json_item[&#34;belongsTo&#34;] = base_command_unique_identifier
+
+    def get_command_parameters_values(self, current_parameter_names, path_action_point):
+        &#34;&#34;&#34;
+            Returns:
+                list[str]: the values of the command parameters for the &#39;path_action_point&#39;&#34;&#34;&#34;
+
+        command_parameters_values = []
+
+        for current_parameter_name in current_parameter_names:
+            parameter_value = path_action_point.get_command_parameter_value(current_parameter_name)
+            command_parameters_values.append(parameter_value)
+
+        return command_parameters_values
+
+    def get_next_path_action_point_coordinates(self, previous_coordinates):
+        &#34;&#34;&#34;
+            Returns:
+                list[float]: [left_edge, top_edge]; the coordinates of the next path modifying point. This is important because if one GUI path modifying point command
+                is the combination of 2+ Auto path modifying point commands then those 2+ points need to be spaced apart otherwise the Auto code
+                raises an error&#34;&#34;&#34;
+
+        return_value = []
+        previous_coordinates_index = points.path_points.index(previous_coordinates)
+        distance = 0
+
+        for x in range(previous_coordinates_index, len(points.path_points)):
+            new_coordinates = points.path_points[x]
+            distance += math.dist(previous_coordinates, new_coordinates)
+
+            if distance &gt;= MINIMUM_DISTANCE_BETWEEN_PATH_MODIYFING_POINTS:
+                return_value = new_coordinates
+                break
+
+        # If it could not find coordinates that are not far enough from the previous path modifying point then a path modifying point can&#39;t be there
+        # Because the Auto code will raise an Error if path modifying points are too close to each other
+        if len(return_value) == 0:
+            raise ValueError(&#34;It is not possible to have a path modifying point there because it will be too close&#34; +
+                             &#34;to other path modifying points&#34;)
+
+        return return_value
+
+    def add_keys_and_values_to_dictionary(self, keys, values, dictionary):
+        &#34;&#34;&#34;Adds the key value pairs to the dictionary&#34;&#34;&#34;
+
+        for x in range(len(keys)):
+            dictionary_key = keys[x]
+            dictionary_value = values[x]
+
+            dictionary[dictionary_key] = dictionary_value
+
+    def update_angle_key_and_value_pairs(self, keys, values):
+        &#34;&#34;&#34;Updates all the key value pairs that are angles: the key has &#39;angle&#39; in its name&#34;&#34;&#34;
+
+        for x in range(len(keys)):
+            dictionary_key = keys[x]
+            dictionary_value = values[x]
+
+            if dictionary_key.__contains__(&#34;angle&#34;) or dictionary_key.__contains__(&#34;Angle&#34;):
+                current_radian_angle = float(dictionary_value) * math.pi / 180
+                delta_angle = current_radian_angle - self.last_angle
+
+                values[x] = delta_angle
+                keys.append(f&#34;{dictionary_key}-GUI&#34;)
+                values.append(dictionary_value)
+
+                # So the GUI angle (field centric) can be stored also.
+                self.last_angle = current_radian_angle
+
+    def write_positions_to_file(self):
+        &#34;&#34;&#34;Writes the control points [x, y] to a file, so the JAR file can give all the points for the path&#34;&#34;&#34;
+
+        all_json_contents = {}
+
+        self.update_path_modifying_point_json(all_json_contents, points.path_modifying_points)
+        json.dump(all_json_contents, open(&#34;swerve_input.txt&#34;, &#34;w+&#34;), indent=JSON_MAX_INDENT)
+
+        os.system(&#34;java -jar AutoFollower.jar swerve_input.txt swerve_output.txt&#34;)
+        swerve_output_reading = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+        file_current_contents = get_string(swerve_output_reading.read()[:-1])  # The last enter must be deleted
+
+        file_current_contents_list = file_current_contents.split(&#34;\n&#34;)
+        last_path_point = file_current_contents_list[-1]
+        # remaining_file_current_contents = get_string(file_current_contents_list[:-1])
+
+        remaining_file_current_contents = &#34;&#34;
+        for item in file_current_contents_list[:-1]:
+            remaining_file_current_contents += f&#34;{item}\n&#34;
+
+        if len(file_current_contents.split(&#34;\n&#34;)) &lt;= 2:
+            messagebox.showerror(&#34;ERROR&#34;, &#34;Java does not seem to be installed on your system !!!&#34;)
+            raise ValueError(&#34;Java does not seem to be installed on your system !!!&#34;)
+
+        swerve_output = open(&#34;swerve_output.txt&#34;, &#34;w+&#34;)
+
+        # The file does not have the last Path Action Point number
+        swerve_output.write(f&#34;{remaining_file_current_contents}Control Point: {len(points.path_modifying_points) - 1}\n{last_path_point}&#34;)
+        swerve_output.close()
+
+        update_meter_path_points()</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.last_angle"><code class="name">var <span class="ident">last_angle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_json_items"><code class="name">var <span class="ident">path_action_point_json_items</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_left_edge"><code class="name">var <span class="ident">path_action_point_left_edge</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_top_edge"><code class="name">var <span class="ident">path_action_point_top_edge</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_path_indexes"><code class="name">var <span class="ident">path_modifying_point_path_indexes</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_path_indexes_length"><code class="name">var <span class="ident">path_modifying_point_path_indexes_length</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_to_angle"><code class="name">var <span class="ident">path_modifying_point_to_angle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_to_current_angle"><code class="name">var <span class="ident">path_modifying_point_to_current_angle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.required_point_index_to_angle"><code class="name">var <span class="ident">required_point_index_to_angle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.add_keys_and_values_to_dictionary"><code class="name flex">
+<span>def <span class="ident">add_keys_and_values_to_dictionary</span></span>(<span>self, keys, values, dictionary)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds the key value pairs to the dictionary</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_keys_and_values_to_dictionary(self, keys, values, dictionary):
+    &#34;&#34;&#34;Adds the key value pairs to the dictionary&#34;&#34;&#34;
+
+    for x in range(len(keys)):
+        dictionary_key = keys[x]
+        dictionary_value = values[x]
+
+        dictionary[dictionary_key] = dictionary_value</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.add_path_action_point_tracking_values"><code class="name flex">
+<span>def <span class="ident">add_path_action_point_tracking_values</span></span>(<span>self, new_path_action_point_json_item, is_base_command, base_command_unique_identifier, subcomponent_number)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds the values that are used for tracking where components of a command belong to in 'new_path_action_point_json_item'
+the tracking values are 'name' and 'belongsTo'</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_path_action_point_tracking_values(self, new_path_action_point_json_item, is_base_command, base_command_unique_identifier, subcomponent_number):
+    &#34;&#34;&#34; Adds the values that are used for tracking where components of a command belong to in &#39;new_path_action_point_json_item&#39;
+        the tracking values are &#39;name&#39; and &#39;belongsTo&#39;&#34;&#34;&#34;
+    
+    if is_base_command:
+        new_path_action_point_json_item[&#34;name&#34;] = base_command_unique_identifier
+        new_path_action_point_json_item[&#34;belongsTo&#34;] = &#34;self&#34;
+    
+    else:
+        new_path_action_point_json_item[&#34;name&#34;] = f&#34;{base_command_unique_identifier} [{subcomponent_number}]&#34;
+        new_path_action_point_json_item[&#34;belongsTo&#34;] = base_command_unique_identifier</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_command_parameters_values"><code class="name flex">
+<span>def <span class="ident">get_command_parameters_values</span></span>(<span>self, current_parameter_names, path_action_point)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[str]</code></dt>
+<dd>the values of the command parameters for the 'path_action_point'</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_command_parameters_values(self, current_parameter_names, path_action_point):
+    &#34;&#34;&#34;
+        Returns:
+            list[str]: the values of the command parameters for the &#39;path_action_point&#39;&#34;&#34;&#34;
+
+    command_parameters_values = []
+
+    for current_parameter_name in current_parameter_names:
+        parameter_value = path_action_point.get_command_parameter_value(current_parameter_name)
+        command_parameters_values.append(parameter_value)
+
+    return command_parameters_values</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_next_path_action_point_coordinates"><code class="name flex">
+<span>def <span class="ident">get_next_path_action_point_coordinates</span></span>(<span>self, previous_coordinates)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[float]</code></dt>
+<dd>[left_edge, top_edge]; the coordinates of the next path modifying point. This is important because if one GUI path modifying point command</dd>
+</dl>
+<p>is the combination of 2+ Auto path modifying point commands then those 2+ points need to be spaced apart otherwise the Auto code
+raises an error</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_next_path_action_point_coordinates(self, previous_coordinates):
+    &#34;&#34;&#34;
+        Returns:
+            list[float]: [left_edge, top_edge]; the coordinates of the next path modifying point. This is important because if one GUI path modifying point command
+            is the combination of 2+ Auto path modifying point commands then those 2+ points need to be spaced apart otherwise the Auto code
+            raises an error&#34;&#34;&#34;
+
+    return_value = []
+    previous_coordinates_index = points.path_points.index(previous_coordinates)
+    distance = 0
+
+    for x in range(previous_coordinates_index, len(points.path_points)):
+        new_coordinates = points.path_points[x]
+        distance += math.dist(previous_coordinates, new_coordinates)
+
+        if distance &gt;= MINIMUM_DISTANCE_BETWEEN_PATH_MODIYFING_POINTS:
+            return_value = new_coordinates
+            break
+
+    # If it could not find coordinates that are not far enough from the previous path modifying point then a path modifying point can&#39;t be there
+    # Because the Auto code will raise an Error if path modifying points are too close to each other
+    if len(return_value) == 0:
+        raise ValueError(&#34;It is not possible to have a path modifying point there because it will be too close&#34; +
+                         &#34;to other path modifying points&#34;)
+
+    return return_value</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_surrounding_path_modifying_point_indexes"><code class="name flex">
+<span>def <span class="ident">get_surrounding_path_modifying_point_indexes</span></span>(<span>self, path_index)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[int]</code></dt>
+<dd>{previous_path_modifying_point_index, next_path_modifying_point_index}; the indexes of the</dd>
+</dl>
+<p>path modifying points that are before and after the 'path_index'</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_surrounding_path_modifying_point_indexes(self, path_index):
+    &#34;&#34;&#34; 
+        Returns:
+            list[int]: {previous_path_modifying_point_index, next_path_modifying_point_index}; the indexes of the
+            path modifying points that are before and after the &#39;path_index&#39;&#34;&#34;&#34;
+
+    previous_path_modifying_point_path_index = self.path_modifying_point_path_indexes[0]
+    next_path_modifying_point_path_index = self.path_modifying_point_path_indexes[1]
+
+    for path_modifying_point_path_index in self.path_modifying_point_path_indexes:
+        if (path_modifying_point_path_index &gt; previous_path_modifying_point_path_index and
+                path_modifying_point_path_index &lt;= path_index):
+
+            previous_path_modifying_point_path_index = path_modifying_point_path_index
+
+        if (path_modifying_point_path_index &lt; next_path_modifying_point_path_index and
+                path_modifying_point_path_index &gt;= path_index):
+
+            next_path_modifying_point_path_index = path_modifying_point_path_index</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_angle_key_and_value_pairs"><code class="name flex">
+<span>def <span class="ident">update_angle_key_and_value_pairs</span></span>(<span>self, keys, values)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates all the key value pairs that are angles: the key has 'angle' in its name</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_angle_key_and_value_pairs(self, keys, values):
+    &#34;&#34;&#34;Updates all the key value pairs that are angles: the key has &#39;angle&#39; in its name&#34;&#34;&#34;
+
+    for x in range(len(keys)):
+        dictionary_key = keys[x]
+        dictionary_value = values[x]
+
+        if dictionary_key.__contains__(&#34;angle&#34;) or dictionary_key.__contains__(&#34;Angle&#34;):
+            current_radian_angle = float(dictionary_value) * math.pi / 180
+            delta_angle = current_radian_angle - self.last_angle
+
+            values[x] = delta_angle
+            keys.append(f&#34;{dictionary_key}-GUI&#34;)
+            values.append(dictionary_value)
+
+            # So the GUI angle (field centric) can be stored also.
+            self.last_angle = current_radian_angle</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_point_command_components_json"><code class="name flex">
+<span>def <span class="ident">update_path_action_point_command_components_json</span></span>(<span>self, path_action_point: auto_components.path_action_point.PathActionPoint)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the command components; some commands are a conglomerate of 2+ commands, so this provides that architecture</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_action_point_command_components_json(self, path_action_point: PathActionPoint):
+    &#34;&#34;&#34;Updates the command components; some commands are a conglomerate of 2+ commands, so this provides that architecture&#34;&#34;&#34;
+
+    base_command_name = path_action_point.get_command_name()
+    command_component_names = []
+
+    # If there are no components for that command, then the components should be 0
+    if commands_retriever.combined_commands.get(base_command_name) is not None:
+        # The first one should be ignored because that is the base command, which is already accounted for
+        command_component_names = commands_retriever.combined_commands.get(base_command_name)[1:]
+
+    self.path_action_point_left_edge, self.path_action_point_top_edge = path_action_point.get_field_left_edge(), path_action_point.get_field_top_edge()
+
+    base_command_unique_identifier = str(uuid.uuid4())[:4]  # Only first 4 digits are needed for a unique value
+    self.update_path_action_point_command_json(path_action_point, base_command_name, base_command_unique_identifier, True, 0, path_action_point.is_needed)
+
+    # Have to set these, so the next point will be the closest to the point of the base command
+    index = get_t_value_path_index(path_action_point, points.path_modifying_point_path_indexes)
+    self.path_action_point_left_edge, self.path_action_point_top_edge = points.path_points[index]
+
+    for x in range(len(command_component_names)):
+        self.path_action_point_left_edge, self.path_action_point_top_edge = self.get_next_path_action_point_coordinates([self.path_action_point_left_edge, self.path_action_point_top_edge])
+        t_value = self.get_path_index_t_value([self.path_action_point_left_edge, self.path_action_point_top_edge])
+        path_action_point.set_t_value(t_value)
+
+        self.update_path_action_point_command_json(path_action_point, command_component_names[x],
+                                                     base_command_unique_identifier, False, x + 1, path_action_point.is_needed)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_point_command_json"><code class="name flex">
+<span>def <span class="ident">update_path_action_point_command_json</span></span>(<span>self, path_action_point, base_command_name, base_command_unique_identifier, is_base_command, command_component_number, is_needed)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the json for the base path modifying point command or command component- The data for all of these will be in
+commands.json</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_action_point_command_json(self, path_action_point, base_command_name, base_command_unique_identifier, is_base_command, command_component_number, is_needed):
+    &#34;&#34;&#34; Updates the json for the base path modifying point command or command component- The data for all of these will be in
+        commands.json&#34;&#34;&#34;
+
+    new_path_action_point_json_item = {}
+    current_command_parameter_names = commands_retriever.get_command_parameter_base_names(base_command_name)
+
+    self.add_path_action_point_tracking_values(new_path_action_point_json_item, is_base_command, base_command_unique_identifier, command_component_number)
+
+    self.add_keys_and_values_to_dictionary([&#34;X&#34;, &#34;Y&#34;, &#34;Speed&#34;, &#34;Command&#34;, &#34;t&#34;],
+                                           [self.path_action_point_left_edge, self.path_action_point_top_edge, path_action_point.get_speed(),
+                                            base_command_name, path_action_point.get_t_value()],
+                                           new_path_action_point_json_item)
+
+    current_command_parameter_values = self.get_command_parameters_values(current_command_parameter_names,
+                                                                          path_action_point)
+    new_path_action_point_json_item_args = {}
+    new_path_action_point_json_item[&#34;args&#34;] = new_path_action_point_json_item_args
+    self.add_keys_and_values_to_dictionary(current_command_parameter_names, current_command_parameter_values,
+                                           new_path_action_point_json_item_args)
+
+    self.path_action_point_json_items.append(new_path_action_point_json_item)
+    new_path_action_point_json_item[&#34;isNeeded&#34;] = is_needed</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_points_json"><code class="name flex">
+<span>def <span class="ident">update_path_action_points_json</span></span>(<span>self, all_json_contents, all_path_action_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>the path_action_points JSON</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_action_points_json(self, all_json_contents, all_path_action_points):
+    &#34;&#34;&#34;
+        Returns:
+            str: the path_action_points JSON&#34;&#34;&#34;
+
+    path_action_points = points.path_action_points
+
+    self.path_action_point_json_items = []
+
+    # How the GUI and Auto Follower define points is different, which is why the names are different here
+    all_json_contents[&#34;WayPoints&#34;] = self.path_action_point_json_items
+
+    for path_action_point in path_action_points:
+        self.update_path_action_point_command_components_json(path_action_point)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_modifying_point_json"><code class="name flex">
+<span>def <span class="ident">update_path_modifying_point_json</span></span>(<span>self, all_json_contents, path_modifying_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates 'all_json_contents' so it contains the 'path_modifying_points' in it, so the file that is eventually written
+can contain all the information necessary for the Auto Path Follower</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_modifying_point_json(self, all_json_contents, path_modifying_points):
+    &#34;&#34;&#34; Updates &#39;all_json_contents&#39; so it contains the &#39;path_modifying_points&#39; in it, so the file that is eventually written
+        can contain all the information necessary for the Auto Path Follower&#34;&#34;&#34;
+
+    # The contents of the control points list
+    path_modifying_point_json_items = []
+
+    # So all_json_contents can now contain all the control points (and modifications to &#39;path_modifying_point_json_items&#39; will be tracked
+    # How the GUI and Auto Follower name points is different, which is why these names are different
+    all_json_contents[&#34;ControlPoints&#34;] = path_modifying_point_json_items
+
+    for path_modifying_point in path_modifying_points:
+        left_edge = path_modifying_point.get_field_left_edge()
+        top_edge = path_modifying_point.get_field_top_edge()
+
+        spline_order = path_modifying_point.get_spline_order()
+
+        new_path_modifying_point_list_item = {
+            &#34;X&#34;: left_edge,
+            &#34;Y&#34;: top_edge,
+            &#34;Vx&#34;: path_modifying_point.get_horizontal_velocity(),
+            &#34;Vy&#34;: path_modifying_point.get_vertical_velocity(),
+            &#34;order&#34;: spline_order
+        }
+
+        path_modifying_point_json_items.append(new_path_modifying_point_list_item)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_required_points_json"><code class="name flex">
+<span>def <span class="ident">update_required_points_json</span></span>(<span>self, all_json_contents, required_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates 'all_json_contents' so it contains the 'required_points' in it, so the file that is eventually written
+can contain all the information necessary for the Auto Path Follower</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_required_points_json(self, all_json_contents, required_points):
+    &#34;&#34;&#34; Updates &#39;all_json_contents&#39; so it contains the &#39;required_points&#39; in it, so the file that is eventually written
+        can contain all the information necessary for the Auto Path Follower&#34;&#34;&#34;
+
+    # The contents of the control points list
+    required_points_json = []
+
+    # So all_json_contents can now contain all the required points (and modifications to &#39;required_points_json&#39; will be tracked
+    all_json_contents[&#34;RequiredPoints&#34;] = required_points_json
+
+    for required_point in required_points:
+
+        left_edge = required_point.get_field_left_edge()
+        top_edge = required_point.get_field_top_edge()
+
+        new_required_point_json = {
+            &#34;X&#34;: left_edge,
+            &#34;Y&#34;: top_edge,
+            &#34;angle-GUI&#34;: required_point.get_angle(),
+            &#34;angle&#34;: math.radians(required_point.get_angle()),
+            &#34;t&#34;: required_point.get_t_value()
+        }
+
+        new_required_point_json_args = {}
+        new_required_point_json[&#34;args&#34;] = new_required_point_json_args
+
+        new_required_point_json[&#34;isNeeded&#34;] = required_point.is_needed
+
+        required_points_json.append(new_required_point_json)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.write_file"><code class="name flex">
+<span>def <span class="ident">write_file</span></span>(<span>self, file, all_path_modifying_points, all_path_action_points, start_all_json_contents, first_required_point, last_required_point, placement_angle)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>"Writes the JSON file that the Auto Path code uses</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_file(self, file, all_path_modifying_points, all_path_action_points,
+               start_all_json_contents, first_required_point, last_required_point, placement_angle):
+    &#34;&#34;&#34;&#34;Writes the JSON file that the Auto Path code uses&#34;&#34;&#34;
+
+    self.last_angle = math.radians(placement_angle)  # So it is converted to radians
+    self.path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+    all_json_contents = start_all_json_contents
+
+    required_points = points.required_points
+    required_points = [first_required_point] + required_points + [last_required_point]
+
+    update_path_modifying_point_information(all_path_action_points, all_path_modifying_points, required_points)
+
+    # All the lists need an empty line after them and the last list does not need a comma
+    # ALso have to call the make_*_accurate because the input fields don&#39;t always reflect what the GUI shows
+    self.update_path_modifying_point_json(all_json_contents, all_path_modifying_points)
+
+    self.update_required_points_json(all_json_contents, required_points)
+
+    self.update_path_action_points_json(all_json_contents, all_path_action_points)
+
+    json.dump(all_json_contents, file, indent=JSON_MAX_INDENT)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.write_positions_to_file"><code class="name flex">
+<span>def <span class="ident">write_positions_to_file</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes the control points [x, y] to a file, so the JAR file can give all the points for the path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_positions_to_file(self):
+    &#34;&#34;&#34;Writes the control points [x, y] to a file, so the JAR file can give all the points for the path&#34;&#34;&#34;
+
+    all_json_contents = {}
+
+    self.update_path_modifying_point_json(all_json_contents, points.path_modifying_points)
+    json.dump(all_json_contents, open(&#34;swerve_input.txt&#34;, &#34;w+&#34;), indent=JSON_MAX_INDENT)
+
+    os.system(&#34;java -jar AutoFollower.jar swerve_input.txt swerve_output.txt&#34;)
+    swerve_output_reading = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+    file_current_contents = get_string(swerve_output_reading.read()[:-1])  # The last enter must be deleted
+
+    file_current_contents_list = file_current_contents.split(&#34;\n&#34;)
+    last_path_point = file_current_contents_list[-1]
+    # remaining_file_current_contents = get_string(file_current_contents_list[:-1])
+
+    remaining_file_current_contents = &#34;&#34;
+    for item in file_current_contents_list[:-1]:
+        remaining_file_current_contents += f&#34;{item}\n&#34;
+
+    if len(file_current_contents.split(&#34;\n&#34;)) &lt;= 2:
+        messagebox.showerror(&#34;ERROR&#34;, &#34;Java does not seem to be installed on your system !!!&#34;)
+        raise ValueError(&#34;Java does not seem to be installed on your system !!!&#34;)
+
+    swerve_output = open(&#34;swerve_output.txt&#34;, &#34;w+&#34;)
+
+    # The file does not have the last Path Action Point number
+    swerve_output.write(f&#34;{remaining_file_current_contents}Control Point: {len(points.path_modifying_points) - 1}\n{last_path_point}&#34;)
+    swerve_output.close()
+
+    update_meter_path_points()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Auto-GUI.auto_features" href="index.html">Auto-GUI.auto_features</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter">JSONFileWriter</a></code></h4>
+<ul class="">
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.add_keys_and_values_to_dictionary" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.add_keys_and_values_to_dictionary">add_keys_and_values_to_dictionary</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.add_path_action_point_tracking_values" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.add_path_action_point_tracking_values">add_path_action_point_tracking_values</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_command_parameters_values" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_command_parameters_values">get_command_parameters_values</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_next_path_action_point_coordinates" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_next_path_action_point_coordinates">get_next_path_action_point_coordinates</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_surrounding_path_modifying_point_indexes" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.get_surrounding_path_modifying_point_indexes">get_surrounding_path_modifying_point_indexes</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.last_angle" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.last_angle">last_angle</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_json_items" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_json_items">path_action_point_json_items</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_left_edge" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_left_edge">path_action_point_left_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_top_edge" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_action_point_top_edge">path_action_point_top_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_path_indexes" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_path_indexes">path_modifying_point_path_indexes</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_path_indexes_length" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_path_indexes_length">path_modifying_point_path_indexes_length</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_to_angle" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_to_angle">path_modifying_point_to_angle</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_to_current_angle" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.path_modifying_point_to_current_angle">path_modifying_point_to_current_angle</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.required_point_index_to_angle" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.required_point_index_to_angle">required_point_index_to_angle</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_angle_key_and_value_pairs" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_angle_key_and_value_pairs">update_angle_key_and_value_pairs</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_point_command_components_json" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_point_command_components_json">update_path_action_point_command_components_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_point_command_json" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_point_command_json">update_path_action_point_command_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_points_json" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_action_points_json">update_path_action_points_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_modifying_point_json" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_path_modifying_point_json">update_path_modifying_point_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_required_points_json" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.update_required_points_json">update_required_points_json</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.write_file" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.write_file">write_file</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.json_file_writer.JSONFileWriter.write_positions_to_file" href="#Auto-GUI.auto_features.json_file_writer.JSONFileWriter.write_positions_to_file">write_positions_to_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

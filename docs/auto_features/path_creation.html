@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Auto-GUI.auto_features.path_creation API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Auto-GUI.auto_features.path_creation</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+from miscellaneous import important_variables
+
+from miscellaneous.utility_functions import *
+
+from miscellaneous.colors import path_action_point_color
+
+
+def get_closest_path_point(left_edge, top_edge):
+    &#34;&#34;&#34;
+        Returns:
+            list[float]: [left_edge, top_edge]; the closest point on the path to the path_action_point. IMPORTANT the unit for the
+            left_edge, top_edge, and path_points must all be equal (meters, pixel, etc.)&#34;&#34;&#34;
+
+    return points.path_points[get_closest_path_point_index(left_edge, top_edge)]
+
+
+def get_closest_path_point_index(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                int: the index of the closest path point&#34;&#34;&#34;
+
+    shortest_distance = float(&#39;inf&#39;)
+    closest_point_index = 0
+
+    for i in range(len(points.path_points)):
+        current_distance = math.dist(points.path_points[i], (left_edge, top_edge))
+
+        if current_distance &lt; shortest_distance:
+            shortest_distance = current_distance
+            closest_point_index = i
+
+    return closest_point_index
+
+
+def draw_path_lines(field_canvas, path_modifying_point_line_width, path_line_width):
+    &#34;&#34;&#34;Draws the path and the path_action_points which are connected to the path&#34;&#34;&#34;
+
+    pixel_path_points = get_pixel_path_points()
+
+    for j in range(len(pixel_path_points) - 1):
+        start_point = pixel_path_points[j]
+        end_point = pixel_path_points[j + 1]
+        field_canvas.create_line(start_point, end_point, fill=path_modifying_point_color, width=path_line_width)
+
+    # for path_action_point in points.path_action_points:
+    #     closest_point = get_closest_path_point(path_action_point.left_edge, path_action_point.top_edge, pixel_path_points, path_action_point)
+    #     field_canvas.create_line((path_action_point.left_edge, path_action_point.top_edge), closest_point, fill=path_action_point_color, width=path_modifying_point_line_width)
+    #
+    # for required_point in points.required_points:
+    #         closest_point = get_closest_path_point(required_point.left_edge, required_point.top_edge, pixel_path_points, required_point)
+    #         field_canvas.create_line((required_point.left_edge, required_point.top_edge), closest_point, fill=required_point_color, width=path_modifying_point_line_width)
+
+
+def get_pixel_location(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                list[float]: [left_edge, top_edge]; the pixel location that the GUI uses. This converts from the Swerve Code
+                locations to the GUI code locations.&#34;&#34;&#34;
+
+    return [int(meters_to_pixels(left_edge)), int(meters_to_pixels(top_edge))]
+
+# The reason this function has very similar code to get_meter_path_points() is because calling get_meter_path_points()
+# And then getting the pixel points requires going through the same points twice, which is too slow
+def get_pixel_path_points():
+    &#34;&#34;&#34;
+            Returns:
+                list[list[float]]: [[x1, y1], [x2, y2]]; the points along the path (in pixels)&#34;&#34;&#34;
+
+    pixel_path_points = []
+    file = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+
+    # The last line has no data as of now, so that line should be ignored (hence list[:-1])
+    for line in get_lines(file.read()[:-1]):
+        is_path_action_point_line = line.__contains__(&#34;Control Point&#34;)
+
+        if is_path_action_point_line:
+            continue
+
+        point_coordinates = line.split(&#34;,&#34;)
+        left_edge, top_edge = float(point_coordinates[0]), float(point_coordinates[1])
+        left_edge, top_edge = get_gui_centric_coordinates(left_edge, top_edge)
+        pixel_locations = get_pixel_location(left_edge, top_edge)
+
+        if not pixel_path_points.__contains__(pixel_locations):
+            pixel_path_points.append(pixel_locations)
+
+    file.close()
+    return pixel_path_points
+
+def update_meter_path_points():
+    &#34;&#34;&#34;Updates &#39;points.path_points&#39; to reflect what was written to swerve_output.txt&#34;&#34;&#34;
+
+    path_points = []
+    file = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+
+    for line in get_lines(file.read()[:-1]):
+        is_path_action_point_line = line.__contains__(&#34;Control Point&#34;)
+
+        # The lines that does not contain control points then it has the path points
+        if not is_path_action_point_line:
+            point_coordinates = line.split(&#34;,&#34;)
+            left_edge, top_edge = float(point_coordinates[0]), float(point_coordinates[1])
+
+            # Have to convert from the (0, 0) of the coordinates being the top left edge of the screen to the (0, 0) being the center of the hub
+            # left_edge, top_edge = get_hub_centric_coordinates(left_edge, top_edge)
+
+            path_points.append([left_edge, top_edge])
+
+    file.close()
+
+    points.path_points = path_points
+    points.path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+
+def get_hub_centric_coordinates(left_edge, top_edge):
+    &#34;&#34;&#34; The meter left_edge and top_edge (location user modifies) has (0, 0) at the center of the hub and the pixel location
+        (GUI location) has (0,0) at the top left edge of the screen. When the pixel coordinates are converted to meters by a scalar multiplier,
+        therefore, offsets must be subtracted to have (0, 0) once again be the center of the hub
+
+        Args:
+            left_edge (float): the left_edge of a point that has (0, 0) at the top left edge of the screen instead of the center of the hub
+            top_edge (double): the top_edge of a point that has (0, 0) at the top left edge of the screen instead of the center of the hub
+
+        Returns:
+            list[double]: {converted_left_edge, converted_top_edge}; the left_edge and top_edge that has the center of the hub be (0, 0)
+    &#34;&#34;&#34;
+
+    left_edge -= important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+    top_edge -= CENTER_OF_FIELD_VERTICAL_OFFSET
+
+    top_edge *= -1  # Because of how the GUI is set up the number will be the negative version of the correct meter number
+
+    return [left_edge, top_edge]
+
+def get_gui_centric_coordinates(left_edge, top_edge):
+    &#34;&#34;&#34; The meter left_edge and top_edge (location user modifies) has (0, 0) at the center of the hub and the pixel location
+        (GUI location) has (0,0) at the top left edge of the screen. When the pixel coordinates are converted to meters by a scalar multiplier,
+        therefore, offsets must be added to have (0, 0) once again be the top left edge of the screen
+
+        Args:
+            left_edge (float): the left_edge of a point that has (0, 0) at the center of the hub instead of the top left edge of the screen
+            top_edge (float): the top_edge of a point that has (0, 0) at the center of the hub instead of the top left edge of the screen
+
+        Returns:
+            list[float]: {converted_left_edge, converted_top_edge}; the left_edge and top_edge that has the top left edge of the screen be (0, 0)
+    &#34;&#34;&#34;
+
+    top_edge *= -1  # The numbers are multiplied by -1 to convert to hub_centric, so it must be multiplied by -1 to convert it to gui
+    left_edge += important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+    top_edge += CENTER_OF_FIELD_VERTICAL_OFFSET
+
+    return [left_edge, top_edge]
+
+def get_meter_location(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                list[float]: [left_edge, top_edge]; the location that the AutoFollower.jar file needs to create the path - converts
+                the values into meters and puts all the numbers based off of the base_left_edge and base_top_edge&#34;&#34;&#34;
+
+    return [pixels_to_meters(left_edge), pixels_to_meters(top_edge)]
+
+
+def get_path_modifying_point_path_indexes():
+    &#34;&#34;&#34;
+            Returns:
+                list[int]: the path indexes of the path modifying points&#34;&#34;&#34;
+
+    return_value = []
+    file = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+    path_modifying_point_index = -1  # So the first path modifying point index starts at 0 not 1
+
+    for line in get_lines(file.read()[:-1]):
+        is_path_action_point_line = line.__contains__(&#34;Control Point&#34;)
+
+        # The lines that does not contain control points then it has the path points
+        if is_path_action_point_line:
+            amount_added = -1 if path_modifying_point_index == -1 else 0  # It starts at -1, which is not a valid index
+            return_value.append(path_modifying_point_index + 1)
+
+        else:
+            path_modifying_point_index += 1
+
+    file.close()
+
+    return return_value
+
+def update_path_modifying_point_information(path_action_points=None, path_modifying_points=None, required_points=None):
+    &#34;&#34;&#34;Updates the information that the path modifying points need specifically which required point affects the angle of the robot&#34;&#34;&#34;
+
+    required_point_path_indexes = []
+
+    # Updating the required point paths
+    path_action_points = points.path_action_points if path_action_points is None else path_action_points
+    required_points = points.required_points if required_points is None else required_points
+    path_modifying_points = points.path_modifying_points if path_modifying_points is None else path_modifying_points
+
+    path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+    for x in range(len(points.path_modifying_points)):
+        path_modifying_points[x].path_index = path_modifying_point_path_indexes[x]
+
+    for required_point in required_points:
+        index = get_t_value_path_index(required_point, path_modifying_point_path_indexes)
+        required_point_path_indexes.append(index)
+
+    update_path_modifying_point_angle_at_points(path_modifying_points, required_points, required_point_path_indexes)
+
+    return [points.path_points, required_point_path_indexes, path_modifying_point_path_indexes]
+
+def update_path_modifying_point_angle_at_points(path_modifying_points, required_points, required_point_path_indexes):
+    &#34;&#34;&#34;Updates the path_modifying_point&#39;s &#39;angle_at_point&#39; attribute, so the angle of the robot lines can be drawn&#34;&#34;&#34;
+
+    # Updating the angles of the path_modifying_points
+    for path_modifying_point in path_modifying_points:
+        last_angle = required_points[0].get_angle()
+        next_angle = required_points[1].get_angle()
+
+        previous_required_point_path_index = float(&#34;-inf&#34;)
+        next_required_point_path_index = float(&#34;inf&#34;)
+        path_modifying_point_path_index = path_modifying_point.path_index
+
+        for i in range(len(required_point_path_indexes)):
+            required_point_path_index = required_point_path_indexes[i]
+
+            if (required_point_path_index &lt;= path_modifying_point_path_index and
+                    required_point_path_index &gt; previous_required_point_path_index):
+
+                previous_required_point_path_index = required_point_path_index
+                last_angle = required_points[i].get_angle()
+
+            if (required_point_path_index &gt;= path_modifying_point_path_index and
+                    required_point_path_index &lt; next_required_point_path_index):
+
+                next_required_point_path_index = required_point_path_index
+                next_angle = required_points[i].get_angle()
+
+        angle = get_angle_at_point(path_modifying_point_path_index,
+                                   previous_required_point_path_index,
+                                   next_required_point_path_index, last_angle,
+                                   next_angle)
+
+        path_modifying_point.set_angle_at_point(angle)
+
+def update_path_action_and_required_point_location(path_action_points, required_points, path_modifying_point_path_indexes, path_modifying_points):
+    &#34;&#34;&#34;Updates the t values of all the path_action_points. The t values allow the robot to know what to execute along the path&#34;&#34;&#34;
+
+    for point in path_action_points + required_points:
+        path_index = get_t_value_path_index(point, path_modifying_point_path_indexes)
+        path_point = points.path_points[path_index]
+
+        # Path point(s) are in this format: [left_edge, top_edge]
+        point.set_field_left_edge(path_point[0], want_rounding=True)
+        point.set_field_top_edge(path_point[1], want_rounding=True)
+
+def get_path_index_t_value(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                float: the t_value at that path_index&#34;&#34;&#34;
+
+    # Finding the values for the math below
+    path_index = points.path_points.index([left_edge, top_edge])
+
+    previous_path_modifying_point_index = float(&#34;-inf&#34;)
+    next_path_modifying_point_index = float(&#34;inf&#34;)
+
+    previous_path_modifying_point_number = 0
+
+    path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+
+    for x in range(len(path_modifying_point_path_indexes)):
+        index = path_modifying_point_path_indexes[x]
+
+        if index &lt;= path_index and index &gt; previous_path_modifying_point_index:
+            previous_path_modifying_point_index = index
+            previous_path_modifying_point_number = x
+
+        if index &gt;= path_index and index &lt; next_path_modifying_point_index:
+            next_path_modifying_point_index = index
+
+    # Doing the math
+    arc_distance = get_distance(previous_path_modifying_point_index, next_path_modifying_point_index)
+    distance_to_path_point = get_distance(previous_path_modifying_point_index, path_index)
+
+    t_value = previous_path_modifying_point_number
+
+    # T values can have a value that is part of the way to another one like 1.5 would be halfway between path modifying
+    # point 1 and path modifying point 2
+    if arc_distance != 0:
+        t_value += distance_to_path_point / arc_distance
+
+    return truncate(t_value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+def get_t_value_path_index(point, path_modifying_point_path_indexes):
+    &#34;&#34;&#34;
+            Returns:
+                int: the path_index that the t value represents&#34;&#34;&#34;
+
+    # T values and indexes are the same except t values need the decimal &#39;chopped off&#39;
+    path_modifying_point_index = int(point.get_t_value())
+
+    return_value = path_modifying_point_path_indexes[path_modifying_point_index]
+
+    # If the t value is not a plain number, then we need to calculate the top edge (2 would be plain while 2.1 would not be plain)
+    if path_modifying_point_index != point.get_t_value():
+        path_indexes = [path_modifying_point_path_indexes[path_modifying_point_index],
+                        path_modifying_point_path_indexes[path_modifying_point_index + 1]]
+
+        # Only keeping the decimal part of the t value
+        t_value_proportion = point.get_t_value() - int(point.get_t_value())
+
+        arc_distance = get_distance(*path_indexes)
+        return_value = get_point_index_at_closest_distance(path_indexes[0], arc_distance * t_value_proportion)
+
+    return return_value
+
+
+def get_point_index_at_closest_distance(start_index, distance):
+    &#34;&#34;&#34;
+            Returns:
+                list[float]: {left_edge, top_edge}; the closest point that is the &#39;distance&#39; from &#39;start_index&#39;&#34;&#34;&#34;
+
+    end_index = len(points.path_points) - 1
+    current_distance = 0
+    last_distance = 0
+    return_value = end_index
+
+    # You have to add 1 to &#39;end_index&#39; to get the for loop to go to that value
+    for x in range(start_index, end_index):
+
+        last_point_index = x
+        current_point_index = x + 1
+
+        last_point = points.path_points[last_point_index]
+        current_point = points.path_points[current_point_index]
+        
+        current_distance += math.dist(last_point, current_point)
+        
+        last_distance_delta = abs(distance - last_distance)
+        current_distance_delta = abs(distance - current_distance)
+
+        if current_distance &gt;= distance and last_distance_delta &lt; current_distance_delta:
+            return_value = last_point_index
+            break
+        
+        elif current_distance &gt;= distance and current_distance_delta &lt; last_distance_delta:
+            return_value = last_point_index
+            break
+            
+    return return_value
+            
+
+def get_angle_at_point(path_modifying_point_path_index, previous_required_point_path_index,
+                        next_required_point_path_index, last_angle, next_angle):
+
+    &#34;&#34;&#34; 
+            Returns:
+                float: the angle at the path modifying point (gotten from figuring out how much each required point
+                angle affects the path modifying point&#34;&#34;&#34;
+
+    return_value = None
+
+    # No proportion calculations need to be done because the required point is on the path modifying point
+    if previous_required_point_path_index == next_required_point_path_index:
+        return_value = last_angle
+
+    else:
+        last_required_point_distance_from_path_modifying_point = get_distance(previous_required_point_path_index, path_modifying_point_path_index)
+        next_required_point_distance_from_path_modifying_point = get_distance(path_modifying_point_path_index, next_required_point_path_index)
+
+        total_distance = last_required_point_distance_from_path_modifying_point + next_required_point_distance_from_path_modifying_point
+        last_required_point_proportion = 1 - (last_required_point_distance_from_path_modifying_point / total_distance)
+        next_required_point_proportion = 1 - (next_required_point_distance_from_path_modifying_point / total_distance)
+
+        last_angle = math.radians(last_angle)
+        next_angle = math.radians(next_angle)
+
+        return_value = last_required_point_proportion * last_angle + next_required_point_proportion * next_angle
+
+    return return_value
+
+def get_distance(first_index, last_index):
+    &#34;&#34;&#34;Gets the distance from all the lines of the path points&#34;&#34;&#34;
+
+    current_distance = 0
+    for x in range(first_index, last_index):
+        point1 = points.path_points[x]
+        point2 = points.path_points[x + 1]
+
+        current_distance += math.dist(point1, point2)
+
+    return current_distance</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Auto-GUI.auto_features.path_creation.draw_path_lines"><code class="name flex">
+<span>def <span class="ident">draw_path_lines</span></span>(<span>field_canvas, path_modifying_point_line_width, path_line_width)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws the path and the path_action_points which are connected to the path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_path_lines(field_canvas, path_modifying_point_line_width, path_line_width):
+    &#34;&#34;&#34;Draws the path and the path_action_points which are connected to the path&#34;&#34;&#34;
+
+    pixel_path_points = get_pixel_path_points()
+
+    for j in range(len(pixel_path_points) - 1):
+        start_point = pixel_path_points[j]
+        end_point = pixel_path_points[j + 1]
+        field_canvas.create_line(start_point, end_point, fill=path_modifying_point_color, width=path_line_width)
+
+    # for path_action_point in points.path_action_points:
+    #     closest_point = get_closest_path_point(path_action_point.left_edge, path_action_point.top_edge, pixel_path_points, path_action_point)
+    #     field_canvas.create_line((path_action_point.left_edge, path_action_point.top_edge), closest_point, fill=path_action_point_color, width=path_modifying_point_line_width)
+    #
+    # for required_point in points.required_points:
+    #         closest_point = get_closest_path_point(required_point.left_edge, required_point.top_edge, pixel_path_points, required_point)
+    #         field_canvas.create_line((required_point.left_edge, required_point.top_edge), closest_point, fill=required_point_color, width=path_modifying_point_line_width)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_angle_at_point"><code class="name flex">
+<span>def <span class="ident">get_angle_at_point</span></span>(<span>path_modifying_point_path_index, previous_required_point_path_index, next_required_point_path_index, last_angle, next_angle)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>the angle at the path modifying point (gotten from figuring out how much each required point</dd>
+</dl>
+<p>angle affects the path modifying point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_angle_at_point(path_modifying_point_path_index, previous_required_point_path_index,
+                        next_required_point_path_index, last_angle, next_angle):
+
+    &#34;&#34;&#34; 
+            Returns:
+                float: the angle at the path modifying point (gotten from figuring out how much each required point
+                angle affects the path modifying point&#34;&#34;&#34;
+
+    return_value = None
+
+    # No proportion calculations need to be done because the required point is on the path modifying point
+    if previous_required_point_path_index == next_required_point_path_index:
+        return_value = last_angle
+
+    else:
+        last_required_point_distance_from_path_modifying_point = get_distance(previous_required_point_path_index, path_modifying_point_path_index)
+        next_required_point_distance_from_path_modifying_point = get_distance(path_modifying_point_path_index, next_required_point_path_index)
+
+        total_distance = last_required_point_distance_from_path_modifying_point + next_required_point_distance_from_path_modifying_point
+        last_required_point_proportion = 1 - (last_required_point_distance_from_path_modifying_point / total_distance)
+        next_required_point_proportion = 1 - (next_required_point_distance_from_path_modifying_point / total_distance)
+
+        last_angle = math.radians(last_angle)
+        next_angle = math.radians(next_angle)
+
+        return_value = last_required_point_proportion * last_angle + next_required_point_proportion * next_angle
+
+    return return_value</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_closest_path_point"><code class="name flex">
+<span>def <span class="ident">get_closest_path_point</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[float]</code></dt>
+<dd>[left_edge, top_edge]; the closest point on the path to the path_action_point. IMPORTANT the unit for the</dd>
+</dl>
+<p>left_edge, top_edge, and path_points must all be equal (meters, pixel, etc.)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_closest_path_point(left_edge, top_edge):
+    &#34;&#34;&#34;
+        Returns:
+            list[float]: [left_edge, top_edge]; the closest point on the path to the path_action_point. IMPORTANT the unit for the
+            left_edge, top_edge, and path_points must all be equal (meters, pixel, etc.)&#34;&#34;&#34;
+
+    return points.path_points[get_closest_path_point_index(left_edge, top_edge)]</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_closest_path_point_index"><code class="name flex">
+<span>def <span class="ident">get_closest_path_point_index</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>the index of the closest path point</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_closest_path_point_index(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                int: the index of the closest path point&#34;&#34;&#34;
+
+    shortest_distance = float(&#39;inf&#39;)
+    closest_point_index = 0
+
+    for i in range(len(points.path_points)):
+        current_distance = math.dist(points.path_points[i], (left_edge, top_edge))
+
+        if current_distance &lt; shortest_distance:
+            shortest_distance = current_distance
+            closest_point_index = i
+
+    return closest_point_index</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_distance"><code class="name flex">
+<span>def <span class="ident">get_distance</span></span>(<span>first_index, last_index)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the distance from all the lines of the path points</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_distance(first_index, last_index):
+    &#34;&#34;&#34;Gets the distance from all the lines of the path points&#34;&#34;&#34;
+
+    current_distance = 0
+    for x in range(first_index, last_index):
+        point1 = points.path_points[x]
+        point2 = points.path_points[x + 1]
+
+        current_distance += math.dist(point1, point2)
+
+    return current_distance</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_gui_centric_coordinates"><code class="name flex">
+<span>def <span class="ident">get_gui_centric_coordinates</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The meter left_edge and top_edge (location user modifies) has (0, 0) at the center of the hub and the pixel location
+(GUI location) has (0,0) at the top left edge of the screen. When the pixel coordinates are converted to meters by a scalar multiplier,
+therefore, offsets must be added to have (0, 0) once again be the top left edge of the screen</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>left_edge</code></strong> :&ensp;<code>float</code></dt>
+<dd>the left_edge of a point that has (0, 0) at the center of the hub instead of the top left edge of the screen</dd>
+<dt><strong><code>top_edge</code></strong> :&ensp;<code>float</code></dt>
+<dd>the top_edge of a point that has (0, 0) at the center of the hub instead of the top left edge of the screen</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[float]</code></dt>
+<dd>{converted_left_edge, converted_top_edge}; the left_edge and top_edge that has the top left edge of the screen be (0, 0)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gui_centric_coordinates(left_edge, top_edge):
+    &#34;&#34;&#34; The meter left_edge and top_edge (location user modifies) has (0, 0) at the center of the hub and the pixel location
+        (GUI location) has (0,0) at the top left edge of the screen. When the pixel coordinates are converted to meters by a scalar multiplier,
+        therefore, offsets must be added to have (0, 0) once again be the top left edge of the screen
+
+        Args:
+            left_edge (float): the left_edge of a point that has (0, 0) at the center of the hub instead of the top left edge of the screen
+            top_edge (float): the top_edge of a point that has (0, 0) at the center of the hub instead of the top left edge of the screen
+
+        Returns:
+            list[float]: {converted_left_edge, converted_top_edge}; the left_edge and top_edge that has the top left edge of the screen be (0, 0)
+    &#34;&#34;&#34;
+
+    top_edge *= -1  # The numbers are multiplied by -1 to convert to hub_centric, so it must be multiplied by -1 to convert it to gui
+    left_edge += important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+    top_edge += CENTER_OF_FIELD_VERTICAL_OFFSET
+
+    return [left_edge, top_edge]</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_hub_centric_coordinates"><code class="name flex">
+<span>def <span class="ident">get_hub_centric_coordinates</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The meter left_edge and top_edge (location user modifies) has (0, 0) at the center of the hub and the pixel location
+(GUI location) has (0,0) at the top left edge of the screen. When the pixel coordinates are converted to meters by a scalar multiplier,
+therefore, offsets must be subtracted to have (0, 0) once again be the center of the hub</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>left_edge</code></strong> :&ensp;<code>float</code></dt>
+<dd>the left_edge of a point that has (0, 0) at the top left edge of the screen instead of the center of the hub</dd>
+<dt><strong><code>top_edge</code></strong> :&ensp;<code>double</code></dt>
+<dd>the top_edge of a point that has (0, 0) at the top left edge of the screen instead of the center of the hub</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[double]</code></dt>
+<dd>{converted_left_edge, converted_top_edge}; the left_edge and top_edge that has the center of the hub be (0, 0)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_hub_centric_coordinates(left_edge, top_edge):
+    &#34;&#34;&#34; The meter left_edge and top_edge (location user modifies) has (0, 0) at the center of the hub and the pixel location
+        (GUI location) has (0,0) at the top left edge of the screen. When the pixel coordinates are converted to meters by a scalar multiplier,
+        therefore, offsets must be subtracted to have (0, 0) once again be the center of the hub
+
+        Args:
+            left_edge (float): the left_edge of a point that has (0, 0) at the top left edge of the screen instead of the center of the hub
+            top_edge (double): the top_edge of a point that has (0, 0) at the top left edge of the screen instead of the center of the hub
+
+        Returns:
+            list[double]: {converted_left_edge, converted_top_edge}; the left_edge and top_edge that has the center of the hub be (0, 0)
+    &#34;&#34;&#34;
+
+    left_edge -= important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+    top_edge -= CENTER_OF_FIELD_VERTICAL_OFFSET
+
+    top_edge *= -1  # Because of how the GUI is set up the number will be the negative version of the correct meter number
+
+    return [left_edge, top_edge]</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_meter_location"><code class="name flex">
+<span>def <span class="ident">get_meter_location</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[float]</code></dt>
+<dd>[left_edge, top_edge]; the location that the AutoFollower.jar file needs to create the path - converts</dd>
+</dl>
+<p>the values into meters and puts all the numbers based off of the base_left_edge and base_top_edge</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_meter_location(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                list[float]: [left_edge, top_edge]; the location that the AutoFollower.jar file needs to create the path - converts
+                the values into meters and puts all the numbers based off of the base_left_edge and base_top_edge&#34;&#34;&#34;
+
+    return [pixels_to_meters(left_edge), pixels_to_meters(top_edge)]</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_path_index_t_value"><code class="name flex">
+<span>def <span class="ident">get_path_index_t_value</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>the t_value at that path_index</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_path_index_t_value(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                float: the t_value at that path_index&#34;&#34;&#34;
+
+    # Finding the values for the math below
+    path_index = points.path_points.index([left_edge, top_edge])
+
+    previous_path_modifying_point_index = float(&#34;-inf&#34;)
+    next_path_modifying_point_index = float(&#34;inf&#34;)
+
+    previous_path_modifying_point_number = 0
+
+    path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+
+    for x in range(len(path_modifying_point_path_indexes)):
+        index = path_modifying_point_path_indexes[x]
+
+        if index &lt;= path_index and index &gt; previous_path_modifying_point_index:
+            previous_path_modifying_point_index = index
+            previous_path_modifying_point_number = x
+
+        if index &gt;= path_index and index &lt; next_path_modifying_point_index:
+            next_path_modifying_point_index = index
+
+    # Doing the math
+    arc_distance = get_distance(previous_path_modifying_point_index, next_path_modifying_point_index)
+    distance_to_path_point = get_distance(previous_path_modifying_point_index, path_index)
+
+    t_value = previous_path_modifying_point_number
+
+    # T values can have a value that is part of the way to another one like 1.5 would be halfway between path modifying
+    # point 1 and path modifying point 2
+    if arc_distance != 0:
+        t_value += distance_to_path_point / arc_distance
+
+    return truncate(t_value, INPUT_FIELD_DECIMAL_ACCURACY)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_path_modifying_point_path_indexes"><code class="name flex">
+<span>def <span class="ident">get_path_modifying_point_path_indexes</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[int]</code></dt>
+<dd>the path indexes of the path modifying points</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_path_modifying_point_path_indexes():
+    &#34;&#34;&#34;
+            Returns:
+                list[int]: the path indexes of the path modifying points&#34;&#34;&#34;
+
+    return_value = []
+    file = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+    path_modifying_point_index = -1  # So the first path modifying point index starts at 0 not 1
+
+    for line in get_lines(file.read()[:-1]):
+        is_path_action_point_line = line.__contains__(&#34;Control Point&#34;)
+
+        # The lines that does not contain control points then it has the path points
+        if is_path_action_point_line:
+            amount_added = -1 if path_modifying_point_index == -1 else 0  # It starts at -1, which is not a valid index
+            return_value.append(path_modifying_point_index + 1)
+
+        else:
+            path_modifying_point_index += 1
+
+    file.close()
+
+    return return_value</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_pixel_location"><code class="name flex">
+<span>def <span class="ident">get_pixel_location</span></span>(<span>left_edge, top_edge)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[float]</code></dt>
+<dd>[left_edge, top_edge]; the pixel location that the GUI uses. This converts from the Swerve Code</dd>
+</dl>
+<p>locations to the GUI code locations.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pixel_location(left_edge, top_edge):
+    &#34;&#34;&#34;
+            Returns:
+                list[float]: [left_edge, top_edge]; the pixel location that the GUI uses. This converts from the Swerve Code
+                locations to the GUI code locations.&#34;&#34;&#34;
+
+    return [int(meters_to_pixels(left_edge)), int(meters_to_pixels(top_edge))]</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_pixel_path_points"><code class="name flex">
+<span>def <span class="ident">get_pixel_path_points</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[list[float]]</code></dt>
+<dd>[[x1, y1], [x2, y2]]; the points along the path (in pixels)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pixel_path_points():
+    &#34;&#34;&#34;
+            Returns:
+                list[list[float]]: [[x1, y1], [x2, y2]]; the points along the path (in pixels)&#34;&#34;&#34;
+
+    pixel_path_points = []
+    file = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+
+    # The last line has no data as of now, so that line should be ignored (hence list[:-1])
+    for line in get_lines(file.read()[:-1]):
+        is_path_action_point_line = line.__contains__(&#34;Control Point&#34;)
+
+        if is_path_action_point_line:
+            continue
+
+        point_coordinates = line.split(&#34;,&#34;)
+        left_edge, top_edge = float(point_coordinates[0]), float(point_coordinates[1])
+        left_edge, top_edge = get_gui_centric_coordinates(left_edge, top_edge)
+        pixel_locations = get_pixel_location(left_edge, top_edge)
+
+        if not pixel_path_points.__contains__(pixel_locations):
+            pixel_path_points.append(pixel_locations)
+
+    file.close()
+    return pixel_path_points</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_point_index_at_closest_distance"><code class="name flex">
+<span>def <span class="ident">get_point_index_at_closest_distance</span></span>(<span>start_index, distance)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[float]</code></dt>
+<dd>{left_edge, top_edge}; the closest point that is the 'distance' from 'start_index'</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_point_index_at_closest_distance(start_index, distance):
+    &#34;&#34;&#34;
+            Returns:
+                list[float]: {left_edge, top_edge}; the closest point that is the &#39;distance&#39; from &#39;start_index&#39;&#34;&#34;&#34;
+
+    end_index = len(points.path_points) - 1
+    current_distance = 0
+    last_distance = 0
+    return_value = end_index
+
+    # You have to add 1 to &#39;end_index&#39; to get the for loop to go to that value
+    for x in range(start_index, end_index):
+
+        last_point_index = x
+        current_point_index = x + 1
+
+        last_point = points.path_points[last_point_index]
+        current_point = points.path_points[current_point_index]
+        
+        current_distance += math.dist(last_point, current_point)
+        
+        last_distance_delta = abs(distance - last_distance)
+        current_distance_delta = abs(distance - current_distance)
+
+        if current_distance &gt;= distance and last_distance_delta &lt; current_distance_delta:
+            return_value = last_point_index
+            break
+        
+        elif current_distance &gt;= distance and current_distance_delta &lt; last_distance_delta:
+            return_value = last_point_index
+            break
+            
+    return return_value</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.get_t_value_path_index"><code class="name flex">
+<span>def <span class="ident">get_t_value_path_index</span></span>(<span>point, path_modifying_point_path_indexes)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>the path_index that the t value represents</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_t_value_path_index(point, path_modifying_point_path_indexes):
+    &#34;&#34;&#34;
+            Returns:
+                int: the path_index that the t value represents&#34;&#34;&#34;
+
+    # T values and indexes are the same except t values need the decimal &#39;chopped off&#39;
+    path_modifying_point_index = int(point.get_t_value())
+
+    return_value = path_modifying_point_path_indexes[path_modifying_point_index]
+
+    # If the t value is not a plain number, then we need to calculate the top edge (2 would be plain while 2.1 would not be plain)
+    if path_modifying_point_index != point.get_t_value():
+        path_indexes = [path_modifying_point_path_indexes[path_modifying_point_index],
+                        path_modifying_point_path_indexes[path_modifying_point_index + 1]]
+
+        # Only keeping the decimal part of the t value
+        t_value_proportion = point.get_t_value() - int(point.get_t_value())
+
+        arc_distance = get_distance(*path_indexes)
+        return_value = get_point_index_at_closest_distance(path_indexes[0], arc_distance * t_value_proportion)
+
+    return return_value</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.update_meter_path_points"><code class="name flex">
+<span>def <span class="ident">update_meter_path_points</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates 'points.path_points' to reflect what was written to swerve_output.txt</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_meter_path_points():
+    &#34;&#34;&#34;Updates &#39;points.path_points&#39; to reflect what was written to swerve_output.txt&#34;&#34;&#34;
+
+    path_points = []
+    file = open(&#34;swerve_output.txt&#34;, &#34;r&#34;)
+
+    for line in get_lines(file.read()[:-1]):
+        is_path_action_point_line = line.__contains__(&#34;Control Point&#34;)
+
+        # The lines that does not contain control points then it has the path points
+        if not is_path_action_point_line:
+            point_coordinates = line.split(&#34;,&#34;)
+            left_edge, top_edge = float(point_coordinates[0]), float(point_coordinates[1])
+
+            # Have to convert from the (0, 0) of the coordinates being the top left edge of the screen to the (0, 0) being the center of the hub
+            # left_edge, top_edge = get_hub_centric_coordinates(left_edge, top_edge)
+
+            path_points.append([left_edge, top_edge])
+
+    file.close()
+
+    points.path_points = path_points
+    points.path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.update_path_action_and_required_point_location"><code class="name flex">
+<span>def <span class="ident">update_path_action_and_required_point_location</span></span>(<span>path_action_points, required_points, path_modifying_point_path_indexes, path_modifying_points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the t values of all the path_action_points. The t values allow the robot to know what to execute along the path</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_action_and_required_point_location(path_action_points, required_points, path_modifying_point_path_indexes, path_modifying_points):
+    &#34;&#34;&#34;Updates the t values of all the path_action_points. The t values allow the robot to know what to execute along the path&#34;&#34;&#34;
+
+    for point in path_action_points + required_points:
+        path_index = get_t_value_path_index(point, path_modifying_point_path_indexes)
+        path_point = points.path_points[path_index]
+
+        # Path point(s) are in this format: [left_edge, top_edge]
+        point.set_field_left_edge(path_point[0], want_rounding=True)
+        point.set_field_top_edge(path_point[1], want_rounding=True)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.update_path_modifying_point_angle_at_points"><code class="name flex">
+<span>def <span class="ident">update_path_modifying_point_angle_at_points</span></span>(<span>path_modifying_points, required_points, required_point_path_indexes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the path_modifying_point's 'angle_at_point' attribute, so the angle of the robot lines can be drawn</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_modifying_point_angle_at_points(path_modifying_points, required_points, required_point_path_indexes):
+    &#34;&#34;&#34;Updates the path_modifying_point&#39;s &#39;angle_at_point&#39; attribute, so the angle of the robot lines can be drawn&#34;&#34;&#34;
+
+    # Updating the angles of the path_modifying_points
+    for path_modifying_point in path_modifying_points:
+        last_angle = required_points[0].get_angle()
+        next_angle = required_points[1].get_angle()
+
+        previous_required_point_path_index = float(&#34;-inf&#34;)
+        next_required_point_path_index = float(&#34;inf&#34;)
+        path_modifying_point_path_index = path_modifying_point.path_index
+
+        for i in range(len(required_point_path_indexes)):
+            required_point_path_index = required_point_path_indexes[i]
+
+            if (required_point_path_index &lt;= path_modifying_point_path_index and
+                    required_point_path_index &gt; previous_required_point_path_index):
+
+                previous_required_point_path_index = required_point_path_index
+                last_angle = required_points[i].get_angle()
+
+            if (required_point_path_index &gt;= path_modifying_point_path_index and
+                    required_point_path_index &lt; next_required_point_path_index):
+
+                next_required_point_path_index = required_point_path_index
+                next_angle = required_points[i].get_angle()
+
+        angle = get_angle_at_point(path_modifying_point_path_index,
+                                   previous_required_point_path_index,
+                                   next_required_point_path_index, last_angle,
+                                   next_angle)
+
+        path_modifying_point.set_angle_at_point(angle)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_features.path_creation.update_path_modifying_point_information"><code class="name flex">
+<span>def <span class="ident">update_path_modifying_point_information</span></span>(<span>path_action_points=None, path_modifying_points=None, required_points=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the information that the path modifying points need specifically which required point affects the angle of the robot</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_path_modifying_point_information(path_action_points=None, path_modifying_points=None, required_points=None):
+    &#34;&#34;&#34;Updates the information that the path modifying points need specifically which required point affects the angle of the robot&#34;&#34;&#34;
+
+    required_point_path_indexes = []
+
+    # Updating the required point paths
+    path_action_points = points.path_action_points if path_action_points is None else path_action_points
+    required_points = points.required_points if required_points is None else required_points
+    path_modifying_points = points.path_modifying_points if path_modifying_points is None else path_modifying_points
+
+    path_modifying_point_path_indexes = get_path_modifying_point_path_indexes()
+    for x in range(len(points.path_modifying_points)):
+        path_modifying_points[x].path_index = path_modifying_point_path_indexes[x]
+
+    for required_point in required_points:
+        index = get_t_value_path_index(required_point, path_modifying_point_path_indexes)
+        required_point_path_indexes.append(index)
+
+    update_path_modifying_point_angle_at_points(path_modifying_points, required_points, required_point_path_indexes)
+
+    return [points.path_points, required_point_path_indexes, path_modifying_point_path_indexes]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Auto-GUI.auto_features" href="index.html">Auto-GUI.auto_features</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Auto-GUI.auto_features.path_creation.draw_path_lines" href="#Auto-GUI.auto_features.path_creation.draw_path_lines">draw_path_lines</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_angle_at_point" href="#Auto-GUI.auto_features.path_creation.get_angle_at_point">get_angle_at_point</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_closest_path_point" href="#Auto-GUI.auto_features.path_creation.get_closest_path_point">get_closest_path_point</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_closest_path_point_index" href="#Auto-GUI.auto_features.path_creation.get_closest_path_point_index">get_closest_path_point_index</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_distance" href="#Auto-GUI.auto_features.path_creation.get_distance">get_distance</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_gui_centric_coordinates" href="#Auto-GUI.auto_features.path_creation.get_gui_centric_coordinates">get_gui_centric_coordinates</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_hub_centric_coordinates" href="#Auto-GUI.auto_features.path_creation.get_hub_centric_coordinates">get_hub_centric_coordinates</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_meter_location" href="#Auto-GUI.auto_features.path_creation.get_meter_location">get_meter_location</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_path_index_t_value" href="#Auto-GUI.auto_features.path_creation.get_path_index_t_value">get_path_index_t_value</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_path_modifying_point_path_indexes" href="#Auto-GUI.auto_features.path_creation.get_path_modifying_point_path_indexes">get_path_modifying_point_path_indexes</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_pixel_location" href="#Auto-GUI.auto_features.path_creation.get_pixel_location">get_pixel_location</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_pixel_path_points" href="#Auto-GUI.auto_features.path_creation.get_pixel_path_points">get_pixel_path_points</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_point_index_at_closest_distance" href="#Auto-GUI.auto_features.path_creation.get_point_index_at_closest_distance">get_point_index_at_closest_distance</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.get_t_value_path_index" href="#Auto-GUI.auto_features.path_creation.get_t_value_path_index">get_t_value_path_index</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.update_meter_path_points" href="#Auto-GUI.auto_features.path_creation.update_meter_path_points">update_meter_path_points</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.update_path_action_and_required_point_location" href="#Auto-GUI.auto_features.path_creation.update_path_action_and_required_point_location">update_path_action_and_required_point_location</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.update_path_modifying_point_angle_at_points" href="#Auto-GUI.auto_features.path_creation.update_path_modifying_point_angle_at_points">update_path_modifying_point_angle_at_points</a></code></li>
+<li><code><a title="Auto-GUI.auto_features.path_creation.update_path_modifying_point_information" href="#Auto-GUI.auto_features.path_creation.update_path_modifying_point_information">update_path_modifying_point_information</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

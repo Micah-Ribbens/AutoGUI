@@ -1,0 +1,16 @@
+{
+  "screenLength": 2250,
+  "screenHeight": 1300,
+  "minisculeFontSize": 4,
+  "tinyFontSize": 6,
+  "smallFontSize": 8,
+  "normalFontSize": 18,
+  "largeFontSize": 24,
+  "leftFieldImagePath": "images/left_field_image.png",
+  "rightFieldImagePath": "images/right_field_image.png",
+  "fieldImageLength": 1002,
+  "fieldImageHeight": 939,
+  "metersToPixelsMultiplier": 115.649606299,
+  "pixelsToMetersMultiplier": 0.008646809
+
+}

@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Auto-GUI.auto_components.movable_point API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Auto-GUI.auto_components.movable_point</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import tkinter
+from miscellaneous import important_variables
+
+from auto_components.grid_items import GridItems
+from auto_components.input_field import InputField
+from auto_features.data_validator import DataValidator
+from auto_features.path_creation import get_hub_centric_coordinates
+from miscellaneous.utility_functions import *
+
+
+class MovablePoint(Button):
+    &#34;&#34;&#34;Any point that the user can move and modify the values of the fields (PathModifyingPoint, PathActionPoint, etc.)&#34;&#34;&#34;
+    
+    # Miscellaneous
+    color = None
+    base_color = None
+    selected_color = None
+    user_modifiable_fields_grid = None
+    order_position_field = None
+    click_function = None
+    left_edge = 0
+    top_edge = 0
+    order_position = 0
+    left_edge_meters = 0
+    top_edge_meters = 0
+
+    # Alterable Data
+    user_modifiable_fields = []
+    left_edge_field = None
+    top_edge_field = None
+    order_position_field = None
+
+    # Size
+    base_length = get_measurement(SCREEN_LENGTH, .9)
+    base_height = base_length
+    base_modifiable_fields = []
+
+    is_needed = True
+
+    def __init__(self, base_color, selected_color, click_function, button_number):
+        &#34;&#34;&#34;Initializes the object&#34;&#34;&#34;
+        
+        self.color, self.base_color = base_color, base_color
+        self.selected_color = selected_color
+
+        self.left_edge_field = InputField(WINDOW, SMALL_FONT, &#34;0&#34;,
+                                          error_message_function=DataValidator.get_float_error_message_function(-9, 9))
+
+        self.top_edge_field = InputField(WINDOW, SMALL_FONT, &#34;0&#34;,
+                                         error_message_function=DataValidator.get_float_error_message_function(-9, 9))
+
+        self.order_position_field = InputField(WINDOW, SMALL_FONT, &#34;&#34;, is_editable=False)
+        self.user_modifiable_fields = [self.order_position_field, self.left_edge_field, self.top_edge_field]
+        self.base_modifiable_fields = [self.order_position_field, self.left_edge_field, self.top_edge_field]
+
+        self.click_function = click_function
+
+        super().__init__(WINDOW, bg=base_color, compound=tkinter.CENTER, command=lambda: click_function(self),
+                         text=button_number, fg=white, font=MINISCULE_FONT)
+        #
+        # MAKE SURE THIS IS BEFORE PLACING
+        #
+        self.user_modifiable_fields_grid = GridItems(self.user_modifiable_fields, GridItems.horizontal_grid)
+
+    def point_user_alterable_fields(self):
+        &#34;&#34;&#34;
+            Returns:
+                GridItems: the grid containing all the user modifiable fields&#34;&#34;&#34;
+        
+        return self.user_modifiable_fields_grid
+
+    def place(self, want_to_update_input_fields=False, **kwargs):
+        &#34;&#34;&#34;Places the object at that location (x, y, width, height)&#34;&#34;&#34;
+
+        self.left_edge = kwargs.get(&#34;x&#34;)
+        self.top_edge = kwargs.get(&#34;y&#34;)
+
+        if want_to_update_input_fields:
+            self.update_input_fields()
+
+        kwargs[&#34;x&#34;] = int(self.left_edge)
+        kwargs[&#34;y&#34;] = int(self.top_edge)
+
+        super().place(kwargs)
+
+    def __str__(self):
+        return str(id(self))
+
+    def default_update_coordinates(self):
+        &#34;&#34;&#34;Moves the component to where the input fields are saying it should be&#34;&#34;&#34;
+
+        field_top_edge = self.get_field_top_edge()
+        field_left_edge = self.get_field_left_edge()
+
+        left_edge_meters = self.get_field_left_edge()
+        top_edge_meters = self.get_field_top_edge()
+
+        top_edge_meters *= -1
+
+        left_edge_meters += important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+        top_edge_meters += CENTER_OF_FIELD_VERTICAL_OFFSET
+
+        left_edge = meters_to_pixels(left_edge_meters)
+        top_edge = meters_to_pixels(top_edge_meters)
+
+        MovablePoint.place(self, x=left_edge, y=top_edge)
+
+        # So the coordinates do not change because of a rounding error
+        self.set_field_top_edge(field_top_edge)
+        self.set_field_left_edge(field_left_edge)
+
+    def update_input_fields(self):
+        &#34;&#34;&#34;Updates the input fields, so they reflect where the component is on the screen&#34;&#34;&#34;
+
+        left_edge = pixels_to_meters(self.left_edge)
+        top_edge = pixels_to_meters(self.top_edge)
+
+        left_edge, top_edge = get_hub_centric_coordinates(left_edge, top_edge)
+
+        self.set_field_left_edge(truncate(left_edge, INPUT_FIELD_DECIMAL_ACCURACY))
+        self.set_field_top_edge(truncate(top_edge, INPUT_FIELD_DECIMAL_ACCURACY))
+
+    # The reason these methods are needed is because the input field&#39;s sometimes have false data
+    def get_left_edge(self):
+        return self.left_edge
+
+    def get_top_edge(self):
+        return self.top_edge
+    
+    def get_field_left_edge(self):
+        return float(self.left_edge_field.get_text())
+
+    def get_field_top_edge(self):
+        return float(self.top_edge_field.get_text())
+    
+    def set_field_left_edge(self, value, want_rounding=False):
+        if want_rounding:
+            value = truncate(value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+        self.left_edge_field.set_text(value)
+        
+    def set_field_top_edge(self, value, want_rounding=False):
+        if want_rounding:
+            value = truncate(value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+        self.top_edge_field.set_text(value)
+
+    def set_order_position(self, order_position):
+        &#34;&#34;&#34;Sets the position of the point (point #1, point #2, etc.)&#34;&#34;&#34;
+
+        self.configure(text=order_position)
+        self.order_position_field.set_text(order_position)
+        self.order_position = order_position
+
+    def destroy(self):
+        &#34;&#34;&#34;Overrides tkinter&#39;s method: removes the button and all the components of the button from the screen&#34;&#34;&#34;
+
+        for field in self.user_modifiable_fields:
+            field.destroy()
+
+        super().destroy()
+
+    def get_order_position(self):
+        &#34;&#34;&#34;
+            Returns:
+                int: the position of the point (point #1, point #2, etc.)&#34;&#34;&#34;
+        
+        return self.order_position
+
+    def set_position_field_text(self, value):
+        self.order_position_field.configure(text=value)
+
+    def get_position_field_text(self):
+        return self.order_position_field.get_text()
+
+    def position_field_is_selected(self):
+        return self.order_position_field.is_selected
+    
+    def get_input_fields(self):
+        &#34;&#34;&#34;
+            Returns:
+                InputField: all the input fields that this point has&#34;&#34;&#34;
+    
+        return list(filter(lambda item: isinstance(item, InputField) and item.is_editable, self.user_modifiable_fields))
+
+    def get_user_modifiable_field(self):
+        &#34;&#34;&#34;
+            Returns:
+                list[object]: all the fields the user can modify&#34;&#34;&#34;
+
+        return self.user_modifiable_fields
+
+    def set_input_fields_command(self, command):
+        &#34;&#34;&#34;Makes all the input fields call the function &#39;command&#39; when they are clicked&#34;&#34;&#34;
+        
+        for input_field in self.get_input_fields():
+            input_field.set_command(command)
+
+    def update_input_fields_belongs_to(self):
+        &#34;&#34;&#34;So the Main Screen can know what the input field&#39;s belong to (a PathModifyingPoint for example)&#34;&#34;&#34;
+
+        for input_field in self.get_input_fields():
+            input_field.set_belongs_to(self)
+
+    def select(self):
+        &#34;&#34;&#34;Makes the point change to the selected color, so the user knows the point is selected&#34;&#34;&#34;
+
+        self.configure(bg=self.selected_color)
+        super().place(x=self.left_edge, y=self.top_edge, width=int(self.base_length * 1.5), height=int(self.base_height * 1.5))
+
+    def unselect(self):
+        &#34;&#34;&#34;Makes the point go back to the base color, so the user knows the point is not selected&#34;&#34;&#34;
+
+        self.configure(bg=self.base_color)
+        super().place(x=self.left_edge, y=self.top_edge, width=int(self.base_length), height=int(self.base_height))
+
+    def __str__(self):
+        &#34;&#34;&#34;FOR DEBUGGING&#34;&#34;&#34;
+
+        return str(self.get_field_top_edge())</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint"><code class="flex name class">
+<span>class <span class="ident">MovablePoint</span></span>
+<span>(</span><span>base_color, selected_color, click_function, button_number)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Any point that the user can move and modify the values of the fields (PathModifyingPoint, PathActionPoint, etc.)</p>
+<p>Initializes the object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MovablePoint(Button):
+    &#34;&#34;&#34;Any point that the user can move and modify the values of the fields (PathModifyingPoint, PathActionPoint, etc.)&#34;&#34;&#34;
+    
+    # Miscellaneous
+    color = None
+    base_color = None
+    selected_color = None
+    user_modifiable_fields_grid = None
+    order_position_field = None
+    click_function = None
+    left_edge = 0
+    top_edge = 0
+    order_position = 0
+    left_edge_meters = 0
+    top_edge_meters = 0
+
+    # Alterable Data
+    user_modifiable_fields = []
+    left_edge_field = None
+    top_edge_field = None
+    order_position_field = None
+
+    # Size
+    base_length = get_measurement(SCREEN_LENGTH, .9)
+    base_height = base_length
+    base_modifiable_fields = []
+
+    is_needed = True
+
+    def __init__(self, base_color, selected_color, click_function, button_number):
+        &#34;&#34;&#34;Initializes the object&#34;&#34;&#34;
+        
+        self.color, self.base_color = base_color, base_color
+        self.selected_color = selected_color
+
+        self.left_edge_field = InputField(WINDOW, SMALL_FONT, &#34;0&#34;,
+                                          error_message_function=DataValidator.get_float_error_message_function(-9, 9))
+
+        self.top_edge_field = InputField(WINDOW, SMALL_FONT, &#34;0&#34;,
+                                         error_message_function=DataValidator.get_float_error_message_function(-9, 9))
+
+        self.order_position_field = InputField(WINDOW, SMALL_FONT, &#34;&#34;, is_editable=False)
+        self.user_modifiable_fields = [self.order_position_field, self.left_edge_field, self.top_edge_field]
+        self.base_modifiable_fields = [self.order_position_field, self.left_edge_field, self.top_edge_field]
+
+        self.click_function = click_function
+
+        super().__init__(WINDOW, bg=base_color, compound=tkinter.CENTER, command=lambda: click_function(self),
+                         text=button_number, fg=white, font=MINISCULE_FONT)
+        #
+        # MAKE SURE THIS IS BEFORE PLACING
+        #
+        self.user_modifiable_fields_grid = GridItems(self.user_modifiable_fields, GridItems.horizontal_grid)
+
+    def point_user_alterable_fields(self):
+        &#34;&#34;&#34;
+            Returns:
+                GridItems: the grid containing all the user modifiable fields&#34;&#34;&#34;
+        
+        return self.user_modifiable_fields_grid
+
+    def place(self, want_to_update_input_fields=False, **kwargs):
+        &#34;&#34;&#34;Places the object at that location (x, y, width, height)&#34;&#34;&#34;
+
+        self.left_edge = kwargs.get(&#34;x&#34;)
+        self.top_edge = kwargs.get(&#34;y&#34;)
+
+        if want_to_update_input_fields:
+            self.update_input_fields()
+
+        kwargs[&#34;x&#34;] = int(self.left_edge)
+        kwargs[&#34;y&#34;] = int(self.top_edge)
+
+        super().place(kwargs)
+
+    def __str__(self):
+        return str(id(self))
+
+    def default_update_coordinates(self):
+        &#34;&#34;&#34;Moves the component to where the input fields are saying it should be&#34;&#34;&#34;
+
+        field_top_edge = self.get_field_top_edge()
+        field_left_edge = self.get_field_left_edge()
+
+        left_edge_meters = self.get_field_left_edge()
+        top_edge_meters = self.get_field_top_edge()
+
+        top_edge_meters *= -1
+
+        left_edge_meters += important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+        top_edge_meters += CENTER_OF_FIELD_VERTICAL_OFFSET
+
+        left_edge = meters_to_pixels(left_edge_meters)
+        top_edge = meters_to_pixels(top_edge_meters)
+
+        MovablePoint.place(self, x=left_edge, y=top_edge)
+
+        # So the coordinates do not change because of a rounding error
+        self.set_field_top_edge(field_top_edge)
+        self.set_field_left_edge(field_left_edge)
+
+    def update_input_fields(self):
+        &#34;&#34;&#34;Updates the input fields, so they reflect where the component is on the screen&#34;&#34;&#34;
+
+        left_edge = pixels_to_meters(self.left_edge)
+        top_edge = pixels_to_meters(self.top_edge)
+
+        left_edge, top_edge = get_hub_centric_coordinates(left_edge, top_edge)
+
+        self.set_field_left_edge(truncate(left_edge, INPUT_FIELD_DECIMAL_ACCURACY))
+        self.set_field_top_edge(truncate(top_edge, INPUT_FIELD_DECIMAL_ACCURACY))
+
+    # The reason these methods are needed is because the input field&#39;s sometimes have false data
+    def get_left_edge(self):
+        return self.left_edge
+
+    def get_top_edge(self):
+        return self.top_edge
+    
+    def get_field_left_edge(self):
+        return float(self.left_edge_field.get_text())
+
+    def get_field_top_edge(self):
+        return float(self.top_edge_field.get_text())
+    
+    def set_field_left_edge(self, value, want_rounding=False):
+        if want_rounding:
+            value = truncate(value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+        self.left_edge_field.set_text(value)
+        
+    def set_field_top_edge(self, value, want_rounding=False):
+        if want_rounding:
+            value = truncate(value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+        self.top_edge_field.set_text(value)
+
+    def set_order_position(self, order_position):
+        &#34;&#34;&#34;Sets the position of the point (point #1, point #2, etc.)&#34;&#34;&#34;
+
+        self.configure(text=order_position)
+        self.order_position_field.set_text(order_position)
+        self.order_position = order_position
+
+    def destroy(self):
+        &#34;&#34;&#34;Overrides tkinter&#39;s method: removes the button and all the components of the button from the screen&#34;&#34;&#34;
+
+        for field in self.user_modifiable_fields:
+            field.destroy()
+
+        super().destroy()
+
+    def get_order_position(self):
+        &#34;&#34;&#34;
+            Returns:
+                int: the position of the point (point #1, point #2, etc.)&#34;&#34;&#34;
+        
+        return self.order_position
+
+    def set_position_field_text(self, value):
+        self.order_position_field.configure(text=value)
+
+    def get_position_field_text(self):
+        return self.order_position_field.get_text()
+
+    def position_field_is_selected(self):
+        return self.order_position_field.is_selected
+    
+    def get_input_fields(self):
+        &#34;&#34;&#34;
+            Returns:
+                InputField: all the input fields that this point has&#34;&#34;&#34;
+    
+        return list(filter(lambda item: isinstance(item, InputField) and item.is_editable, self.user_modifiable_fields))
+
+    def get_user_modifiable_field(self):
+        &#34;&#34;&#34;
+            Returns:
+                list[object]: all the fields the user can modify&#34;&#34;&#34;
+
+        return self.user_modifiable_fields
+
+    def set_input_fields_command(self, command):
+        &#34;&#34;&#34;Makes all the input fields call the function &#39;command&#39; when they are clicked&#34;&#34;&#34;
+        
+        for input_field in self.get_input_fields():
+            input_field.set_command(command)
+
+    def update_input_fields_belongs_to(self):
+        &#34;&#34;&#34;So the Main Screen can know what the input field&#39;s belong to (a PathModifyingPoint for example)&#34;&#34;&#34;
+
+        for input_field in self.get_input_fields():
+            input_field.set_belongs_to(self)
+
+    def select(self):
+        &#34;&#34;&#34;Makes the point change to the selected color, so the user knows the point is selected&#34;&#34;&#34;
+
+        self.configure(bg=self.selected_color)
+        super().place(x=self.left_edge, y=self.top_edge, width=int(self.base_length * 1.5), height=int(self.base_height * 1.5))
+
+    def unselect(self):
+        &#34;&#34;&#34;Makes the point go back to the base color, so the user knows the point is not selected&#34;&#34;&#34;
+
+        self.configure(bg=self.base_color)
+        super().place(x=self.left_edge, y=self.top_edge, width=int(self.base_length), height=int(self.base_height))
+
+    def __str__(self):
+        &#34;&#34;&#34;FOR DEBUGGING&#34;&#34;&#34;
+
+        return str(self.get_field_top_edge())</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Button</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.base_color"><code class="name">var <span class="ident">base_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.base_height"><code class="name">var <span class="ident">base_height</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.base_length"><code class="name">var <span class="ident">base_length</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.base_modifiable_fields"><code class="name">var <span class="ident">base_modifiable_fields</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.click_function"><code class="name">var <span class="ident">click_function</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.color"><code class="name">var <span class="ident">color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.is_needed"><code class="name">var <span class="ident">is_needed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.left_edge"><code class="name">var <span class="ident">left_edge</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.left_edge_field"><code class="name">var <span class="ident">left_edge_field</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.left_edge_meters"><code class="name">var <span class="ident">left_edge_meters</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.order_position"><code class="name">var <span class="ident">order_position</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.order_position_field"><code class="name">var <span class="ident">order_position_field</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.selected_color"><code class="name">var <span class="ident">selected_color</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.top_edge"><code class="name">var <span class="ident">top_edge</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.top_edge_field"><code class="name">var <span class="ident">top_edge_field</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.top_edge_meters"><code class="name">var <span class="ident">top_edge_meters</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.user_modifiable_fields"><code class="name">var <span class="ident">user_modifiable_fields</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.user_modifiable_fields_grid"><code class="name">var <span class="ident">user_modifiable_fields_grid</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.default_update_coordinates"><code class="name flex">
+<span>def <span class="ident">default_update_coordinates</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Moves the component to where the input fields are saying it should be</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def default_update_coordinates(self):
+    &#34;&#34;&#34;Moves the component to where the input fields are saying it should be&#34;&#34;&#34;
+
+    field_top_edge = self.get_field_top_edge()
+    field_left_edge = self.get_field_left_edge()
+
+    left_edge_meters = self.get_field_left_edge()
+    top_edge_meters = self.get_field_top_edge()
+
+    top_edge_meters *= -1
+
+    left_edge_meters += important_variables.CENTER_OF_FIELD_HORIZONTAL_OFFSET
+    top_edge_meters += CENTER_OF_FIELD_VERTICAL_OFFSET
+
+    left_edge = meters_to_pixels(left_edge_meters)
+    top_edge = meters_to_pixels(top_edge_meters)
+
+    MovablePoint.place(self, x=left_edge, y=top_edge)
+
+    # So the coordinates do not change because of a rounding error
+    self.set_field_top_edge(field_top_edge)
+    self.set_field_left_edge(field_left_edge)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.destroy"><code class="name flex">
+<span>def <span class="ident">destroy</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Overrides tkinter's method: removes the button and all the components of the button from the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def destroy(self):
+    &#34;&#34;&#34;Overrides tkinter&#39;s method: removes the button and all the components of the button from the screen&#34;&#34;&#34;
+
+    for field in self.user_modifiable_fields:
+        field.destroy()
+
+    super().destroy()</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_field_left_edge"><code class="name flex">
+<span>def <span class="ident">get_field_left_edge</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_field_left_edge(self):
+    return float(self.left_edge_field.get_text())</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_field_top_edge"><code class="name flex">
+<span>def <span class="ident">get_field_top_edge</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_field_top_edge(self):
+    return float(self.top_edge_field.get_text())</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_input_fields"><code class="name flex">
+<span>def <span class="ident">get_input_fields</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>InputField</code></dt>
+<dd>all the input fields that this point has</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_input_fields(self):
+    &#34;&#34;&#34;
+        Returns:
+            InputField: all the input fields that this point has&#34;&#34;&#34;
+
+    return list(filter(lambda item: isinstance(item, InputField) and item.is_editable, self.user_modifiable_fields))</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_left_edge"><code class="name flex">
+<span>def <span class="ident">get_left_edge</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_left_edge(self):
+    return self.left_edge</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_order_position"><code class="name flex">
+<span>def <span class="ident">get_order_position</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>the position of the point (point #1, point #2, etc.)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_order_position(self):
+    &#34;&#34;&#34;
+        Returns:
+            int: the position of the point (point #1, point #2, etc.)&#34;&#34;&#34;
+    
+    return self.order_position</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_position_field_text"><code class="name flex">
+<span>def <span class="ident">get_position_field_text</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_position_field_text(self):
+    return self.order_position_field.get_text()</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_top_edge"><code class="name flex">
+<span>def <span class="ident">get_top_edge</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_top_edge(self):
+    return self.top_edge</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.get_user_modifiable_field"><code class="name flex">
+<span>def <span class="ident">get_user_modifiable_field</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[object]</code></dt>
+<dd>all the fields the user can modify</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_user_modifiable_field(self):
+    &#34;&#34;&#34;
+        Returns:
+            list[object]: all the fields the user can modify&#34;&#34;&#34;
+
+    return self.user_modifiable_fields</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.place"><code class="name flex">
+<span>def <span class="ident">place</span></span>(<span>self, want_to_update_input_fields=False, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Places the object at that location (x, y, width, height)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def place(self, want_to_update_input_fields=False, **kwargs):
+    &#34;&#34;&#34;Places the object at that location (x, y, width, height)&#34;&#34;&#34;
+
+    self.left_edge = kwargs.get(&#34;x&#34;)
+    self.top_edge = kwargs.get(&#34;y&#34;)
+
+    if want_to_update_input_fields:
+        self.update_input_fields()
+
+    kwargs[&#34;x&#34;] = int(self.left_edge)
+    kwargs[&#34;y&#34;] = int(self.top_edge)
+
+    super().place(kwargs)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.point_user_alterable_fields"><code class="name flex">
+<span>def <span class="ident">point_user_alterable_fields</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="returns">Returns</h2>
+<dl>
+<dt><code>GridItems</code></dt>
+<dd>the grid containing all the user modifiable fields</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def point_user_alterable_fields(self):
+    &#34;&#34;&#34;
+        Returns:
+            GridItems: the grid containing all the user modifiable fields&#34;&#34;&#34;
+    
+    return self.user_modifiable_fields_grid</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.position_field_is_selected"><code class="name flex">
+<span>def <span class="ident">position_field_is_selected</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def position_field_is_selected(self):
+    return self.order_position_field.is_selected</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.select"><code class="name flex">
+<span>def <span class="ident">select</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes the point change to the selected color, so the user knows the point is selected</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select(self):
+    &#34;&#34;&#34;Makes the point change to the selected color, so the user knows the point is selected&#34;&#34;&#34;
+
+    self.configure(bg=self.selected_color)
+    super().place(x=self.left_edge, y=self.top_edge, width=int(self.base_length * 1.5), height=int(self.base_height * 1.5))</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.set_field_left_edge"><code class="name flex">
+<span>def <span class="ident">set_field_left_edge</span></span>(<span>self, value, want_rounding=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_field_left_edge(self, value, want_rounding=False):
+    if want_rounding:
+        value = truncate(value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+    self.left_edge_field.set_text(value)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.set_field_top_edge"><code class="name flex">
+<span>def <span class="ident">set_field_top_edge</span></span>(<span>self, value, want_rounding=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_field_top_edge(self, value, want_rounding=False):
+    if want_rounding:
+        value = truncate(value, INPUT_FIELD_DECIMAL_ACCURACY)
+
+    self.top_edge_field.set_text(value)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.set_input_fields_command"><code class="name flex">
+<span>def <span class="ident">set_input_fields_command</span></span>(<span>self, command)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes all the input fields call the function 'command' when they are clicked</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_input_fields_command(self, command):
+    &#34;&#34;&#34;Makes all the input fields call the function &#39;command&#39; when they are clicked&#34;&#34;&#34;
+    
+    for input_field in self.get_input_fields():
+        input_field.set_command(command)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.set_order_position"><code class="name flex">
+<span>def <span class="ident">set_order_position</span></span>(<span>self, order_position)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets the position of the point (point #1, point #2, etc.)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_order_position(self, order_position):
+    &#34;&#34;&#34;Sets the position of the point (point #1, point #2, etc.)&#34;&#34;&#34;
+
+    self.configure(text=order_position)
+    self.order_position_field.set_text(order_position)
+    self.order_position = order_position</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.set_position_field_text"><code class="name flex">
+<span>def <span class="ident">set_position_field_text</span></span>(<span>self, value)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_position_field_text(self, value):
+    self.order_position_field.configure(text=value)</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.unselect"><code class="name flex">
+<span>def <span class="ident">unselect</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes the point go back to the base color, so the user knows the point is not selected</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unselect(self):
+    &#34;&#34;&#34;Makes the point go back to the base color, so the user knows the point is not selected&#34;&#34;&#34;
+
+    self.configure(bg=self.base_color)
+    super().place(x=self.left_edge, y=self.top_edge, width=int(self.base_length), height=int(self.base_height))</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.update_input_fields"><code class="name flex">
+<span>def <span class="ident">update_input_fields</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the input fields, so they reflect where the component is on the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_input_fields(self):
+    &#34;&#34;&#34;Updates the input fields, so they reflect where the component is on the screen&#34;&#34;&#34;
+
+    left_edge = pixels_to_meters(self.left_edge)
+    top_edge = pixels_to_meters(self.top_edge)
+
+    left_edge, top_edge = get_hub_centric_coordinates(left_edge, top_edge)
+
+    self.set_field_left_edge(truncate(left_edge, INPUT_FIELD_DECIMAL_ACCURACY))
+    self.set_field_top_edge(truncate(top_edge, INPUT_FIELD_DECIMAL_ACCURACY))</code></pre>
+</details>
+</dd>
+<dt id="Auto-GUI.auto_components.movable_point.MovablePoint.update_input_fields_belongs_to"><code class="name flex">
+<span>def <span class="ident">update_input_fields_belongs_to</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>So the Main Screen can know what the input field's belong to (a PathModifyingPoint for example)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_input_fields_belongs_to(self):
+    &#34;&#34;&#34;So the Main Screen can know what the input field&#39;s belong to (a PathModifyingPoint for example)&#34;&#34;&#34;
+
+    for input_field in self.get_input_fields():
+        input_field.set_belongs_to(self)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Auto-GUI.auto_components" href="index.html">Auto-GUI.auto_components</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint" href="#Auto-GUI.auto_components.movable_point.MovablePoint">MovablePoint</a></code></h4>
+<ul class="">
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.base_color" href="#Auto-GUI.auto_components.movable_point.MovablePoint.base_color">base_color</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.base_height" href="#Auto-GUI.auto_components.movable_point.MovablePoint.base_height">base_height</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.base_length" href="#Auto-GUI.auto_components.movable_point.MovablePoint.base_length">base_length</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.base_modifiable_fields" href="#Auto-GUI.auto_components.movable_point.MovablePoint.base_modifiable_fields">base_modifiable_fields</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.click_function" href="#Auto-GUI.auto_components.movable_point.MovablePoint.click_function">click_function</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.color" href="#Auto-GUI.auto_components.movable_point.MovablePoint.color">color</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.default_update_coordinates" href="#Auto-GUI.auto_components.movable_point.MovablePoint.default_update_coordinates">default_update_coordinates</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.destroy" href="#Auto-GUI.auto_components.movable_point.MovablePoint.destroy">destroy</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_field_left_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_field_left_edge">get_field_left_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_field_top_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_field_top_edge">get_field_top_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_input_fields" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_input_fields">get_input_fields</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_left_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_left_edge">get_left_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_order_position" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_order_position">get_order_position</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_position_field_text" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_position_field_text">get_position_field_text</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_top_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_top_edge">get_top_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.get_user_modifiable_field" href="#Auto-GUI.auto_components.movable_point.MovablePoint.get_user_modifiable_field">get_user_modifiable_field</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.is_needed" href="#Auto-GUI.auto_components.movable_point.MovablePoint.is_needed">is_needed</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.left_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.left_edge">left_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.left_edge_field" href="#Auto-GUI.auto_components.movable_point.MovablePoint.left_edge_field">left_edge_field</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.left_edge_meters" href="#Auto-GUI.auto_components.movable_point.MovablePoint.left_edge_meters">left_edge_meters</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.order_position" href="#Auto-GUI.auto_components.movable_point.MovablePoint.order_position">order_position</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.order_position_field" href="#Auto-GUI.auto_components.movable_point.MovablePoint.order_position_field">order_position_field</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.place" href="#Auto-GUI.auto_components.movable_point.MovablePoint.place">place</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.point_user_alterable_fields" href="#Auto-GUI.auto_components.movable_point.MovablePoint.point_user_alterable_fields">point_user_alterable_fields</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.position_field_is_selected" href="#Auto-GUI.auto_components.movable_point.MovablePoint.position_field_is_selected">position_field_is_selected</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.select" href="#Auto-GUI.auto_components.movable_point.MovablePoint.select">select</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.selected_color" href="#Auto-GUI.auto_components.movable_point.MovablePoint.selected_color">selected_color</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.set_field_left_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.set_field_left_edge">set_field_left_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.set_field_top_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.set_field_top_edge">set_field_top_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.set_input_fields_command" href="#Auto-GUI.auto_components.movable_point.MovablePoint.set_input_fields_command">set_input_fields_command</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.set_order_position" href="#Auto-GUI.auto_components.movable_point.MovablePoint.set_order_position">set_order_position</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.set_position_field_text" href="#Auto-GUI.auto_components.movable_point.MovablePoint.set_position_field_text">set_position_field_text</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.top_edge" href="#Auto-GUI.auto_components.movable_point.MovablePoint.top_edge">top_edge</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.top_edge_field" href="#Auto-GUI.auto_components.movable_point.MovablePoint.top_edge_field">top_edge_field</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.top_edge_meters" href="#Auto-GUI.auto_components.movable_point.MovablePoint.top_edge_meters">top_edge_meters</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.unselect" href="#Auto-GUI.auto_components.movable_point.MovablePoint.unselect">unselect</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.update_input_fields" href="#Auto-GUI.auto_components.movable_point.MovablePoint.update_input_fields">update_input_fields</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.update_input_fields_belongs_to" href="#Auto-GUI.auto_components.movable_point.MovablePoint.update_input_fields_belongs_to">update_input_fields_belongs_to</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.user_modifiable_fields" href="#Auto-GUI.auto_components.movable_point.MovablePoint.user_modifiable_fields">user_modifiable_fields</a></code></li>
+<li><code><a title="Auto-GUI.auto_components.movable_point.MovablePoint.user_modifiable_fields_grid" href="#Auto-GUI.auto_components.movable_point.MovablePoint.user_modifiable_fields_grid">user_modifiable_fields_grid</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
